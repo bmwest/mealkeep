@@ -19,7 +19,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite rake db:test:prepare && rspec
+* How to run the test suite ```rake db:test:prepare && rspec```
 
 * Services (job queues, cache servers, search engines, etc.)
 
