@@ -6,7 +6,7 @@ feature "user signs in" do
   scenario "an logged-in user signs out a successfully" do
     sign_in(user)
 
-    expect(page).to have_content("Hey, nice to see you again.")
+    expect(page).to have_content("Nice to see you again.")
     expect(page).to have_content("Log out")
     expect(page).to_not have_content("Log in")
     expect(page).to_not have_content("Email Sign up")
