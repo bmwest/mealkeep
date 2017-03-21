@@ -26,7 +26,6 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     @profile = Profile.where(user: @user)[0]
-    # @avatar = @profile.avatar
     @about_me = @profile.about_me
   end
 
@@ -41,7 +40,7 @@ class ProfilesController < ApplicationController
 
     if @profile.update(profile_params)
       redirect_to user_profile_path(id: @profile, user_id: @user)
-      flash[:notice] = "You're profile has been successfully upated"
+      flash[:notice] = "You're profile has been successfully updated!"
     else
       render :edit
     end
