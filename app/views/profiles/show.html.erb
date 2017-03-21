@@ -1,0 +1,4 @@
+<% if current_user && @profile.user == current_user %>
+  <h2>A little bit about <%= current_user.first_name %>,</h2>
+  <p><%= @profile.about_me %></p>
+<% end %>

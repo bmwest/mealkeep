@@ -6,4 +6,8 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory :profile do
+    about_me "I like cheese. A lot."
+  end
 end

@@ -1,0 +1,16 @@
+<div class = "profile-header">
+  <h1><%= "#{@header}, #{@user.first_name}" %></h1>
+</div>
+
+<div class = "profile-starter">
+  <p><%= @prompt %></p>
+  <ul>
+    <% @starters.each do |s|%>
+      <li><%= s %> </li>
+      <% end %>
+  </ul>
+</div>
+
+<div class="profile-form">
+  <%= render 'about_me_form', user: @user, profile: @profile %>
+</div>
