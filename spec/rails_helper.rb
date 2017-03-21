@@ -64,7 +64,7 @@ def sign_in(user)
   click_button "Log in"
 end
 
-def make_profile(user)
+def make_profile
   visit root_path
   click_link "Create a Profile"
   fill_in "About Me", with: "I like cake"

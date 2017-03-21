@@ -11,7 +11,6 @@ feature "user creates a profile" do
     expect(page).to_not have_content("Log in")
     expect(page).to_not have_content("Email Sign up")
 
-
     click_link "Create a Profile"
 
     expect(page).to have_content("Let's get started")
