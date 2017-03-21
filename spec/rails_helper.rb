@@ -63,3 +63,10 @@ def sign_in(user)
   fill_in "Password", with: user.password
   click_button "Log in"
 end
+
+def make_profile
+  visit root_path
+  click_link "Create a Profile"
+  fill_in "About Me", with: "I like cake"
+  click_button "Save"
+end
