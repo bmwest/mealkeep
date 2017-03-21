@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Recipe.destroy_all
+
+18.times do
+  Recipe.create(name: Faker::Hipster.word,
+                description: Faker::Hipster.paragraph,
+                minutes: Faker::Number.between(1, 300),
+                user: User.find(1))
+end

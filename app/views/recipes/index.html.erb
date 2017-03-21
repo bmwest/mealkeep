@@ -1,0 +1,10 @@
+<div class="recipes-header">
+  <h1><%= @header %></h1>
+</div>
+
+<% if @recipes.empty? %>
+  <p>You're recipe book is empty. Click '<em>Add Recipe</em>' to get started!</p>
+<% else %>
+  <div class="recipe-list">
+  </div>
+<% end %>
