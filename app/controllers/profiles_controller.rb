@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-
   def new
     @user = current_user
     @profile = Profile.new
@@ -52,8 +51,8 @@ class ProfilesController < ApplicationController
 
     if @profile.destroy
       redirect_to root_path, notice: "Your profile has been deleted. " +
-      "To cancel your account, you may select 'Cancel My Account' from the " +
-      "'Settings' menu." 
+        "To cancel your account, you may select 'Cancel My Account' from the " +
+        "'Settings' menu."
     end
   end
 
