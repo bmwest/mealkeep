@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :authorize_user
+
   def new
     @user = current_user
     @profile = Profile.new
@@ -61,4 +63,11 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:about_me, :avatar)
   end
+
+  def authorize_user
+   unless user_signed_in?
+     flash[:notice] = "Please log in to use this feature"
+     redirect_to new_user_session_path
+   end
+ end
 end
