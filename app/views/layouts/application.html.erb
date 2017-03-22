@@ -13,12 +13,13 @@
       <% if user_signed_in? %>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
         <% if current_user && current_user.profile.empty? %>
-          <%= link_to 'Create a Profile', new_user_profile_path(current_user) %>
+          <%= link_to 'Create a Profile', new_user_profile_path(current_user) %> | 
         <% elsif !current_user.profile.empty? %>
           <%= link_to 'View Your Profile', user_profile_path(current_user.id, current_user.profile) %> |
           <%= link_to 'Edit Your Profile', edit_user_profile_path(current_user.id, current_user.profile) %> |
         <% end %>
-          <%= link_to 'Your Recipes', user_recipes_path(current_user)%>
+          <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
+          <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%>
         <p> Settings </p>
         <ul>
           <% if !current_user.profile.empty? %>

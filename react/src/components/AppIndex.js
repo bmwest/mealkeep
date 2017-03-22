@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RecipeList from './RecipeList'
+import Recipe from './Recipe'
 
 class AppIndex extends Component {
   constructor(props) {
@@ -46,9 +46,52 @@ class AppIndex extends Component {
   }
 
   render() {
+    let indexOfLastRecipe = this.state.currentPage * this.state.recipesPerPage;
+    let indexOfFirstRecipe = indexOfLastRecipe - this.state.recipesPerPage;
+    let currentRecipes = this.state.recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+
+    let newRecipes = currentRecipes.map((recipe, index) => {
+      return (
+        <Recipe
+          id={recipe.id}
+          key={index}
+          name={recipe.name}
+          description={recipe.description}
+          minutes={recipe.minutes}
+          hours={recipe.hours}
+          photo={recipe.photo}
+        />
+      )
+    });
+
+    let pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(this.state.recipes.length / this.state.recipesPerPage); i++){
+      pageNumbers.push(i);
+    }
+
+    let renderPageNumbers = pageNumbers.map(number => {
+      let icon = `>`
+      if (this.state.currentPage > 1) {
+        icon = `<`
+      }
+      return (
+        <li
+        key={number}
+        id={number}
+        onClick={this.handleClick}
+        className="page-number">
+        {icon}
+        </li>
+      );
+    });
+
     return(
       <div className="recipe-list">
-        <RecipeList recipes={this.state.recipes} />
+        {newRecipes}
+        <ul>
+          {renderPageNumbers}
+          {`Current Page ${this.state.currentPage}`}
+        </ul>
       </div>
     )
   }

@@ -1,0 +1,23 @@
+<%= form_for @recipe do |f| %>
+
+  <%= f.label :name %><br>
+  <%=f.text_field :name %><br><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br><br>
+
+  <%= f.label :minutes %><br>
+  <%= f.select(:minutes, options_for_select(@minutes_collection, selected: recipe.minutes)) %><br><br>
+
+  <%= f.label :hours %><br>
+  <%= f.select(:hours, options_for_select(@hours_collection, selected: recipe.hours)) %><br><br>
+
+  <%= f.label :photo, "Upload Photo File:"%><br>
+  <%= f.file_field :photo %><br><br>
+
+  <%= f.label :video, "Upload Video File:"%><br>
+  <%= f.file_field :video %><br><br>
+
+  <%= f.submit "Add Recipe"%><br><br>
+
+<% end %>
