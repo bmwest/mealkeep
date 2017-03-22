@@ -1,0 +1,24 @@
+<h1><%= @header %></h1>
+
+<div class="recipe-permissions">
+  <%= link_to "Edit", edit_recipe_path(@recipe) %> |
+  <%= link_to "Remove", user_recipe_path(@recipe), method: :delete%>
+</div>
+
+<div class="recipe-container">
+  <div class="recipe-description">
+    <p><%= @recipe.description %></p>
+  </div>
+
+  <div class="recipe-time">
+    <p><%= @recipe.hours%> hr | <%= @recipe.minutes %> min</p>
+  </div>
+
+  <div class="recipe-media">
+    <p><%= @recipe.video %></p>
+    <p><%= @recipe.photo %></p>
+  </div>
+
+  <div id="recipe-ingredients">
+  </div>
+</div>

@@ -9,4 +9,6 @@ class User < ApplicationRecord
   def profile
     Profile.where(user: User.ids)
   end
+
+  has_many :recipes
 end
