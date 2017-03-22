@@ -8,7 +8,7 @@
 
 Recipe.destroy_all
 
-18.times do
+12.times do
   Recipe.create(name: Faker::Hipster.word,
                 description: Faker::Hipster.paragraph,
                 minutes: Faker::Number.between(1, 300),
