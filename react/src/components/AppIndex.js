@@ -20,7 +20,9 @@ class AppIndex extends Component {
   }
 
   getData() {
-    fetch('http://localhost:3000/api/v1/recipes')
+    fetch('http://localhost:3000/api/v1/recipes', {
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -34,41 +36,19 @@ class AppIndex extends Component {
       return response.json();
     })
     .then(body => {
-      console.log(body);
-    })
-    .then(body => {
-      this.setState({recipes: body})
+      this.setState({recipes: body});
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
     this.getData();
-    debugger;
   }
 
   render() {
-    let recipeData = this.state.recipes.map((recipe) => {
-      return (
-        <RecipeList
-          id={recipe.id}
-          key={recipe.id}
-          name={recipe.name}
-          body={recipe.description}
-          hours={recipe.minutes/60}
-          minutes={recipe.minutes}
-          video={recipe.video}
-          photo={recipe.photo}
-        />
-      )
-    });
-    console.log(this.state.recipes)
-    console.log(recipeData)
     return(
       <div className="recipe-list">
-          <RecipeList
-          recipes={recipeData}
-          />
+        <RecipeList recipes={this.state.recipes} />
       </div>
     )
   }
