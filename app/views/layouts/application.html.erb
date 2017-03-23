@@ -1,41 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>plāt.</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <title>plate.</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <nav>
-      <% if user_signed_in? %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
-        <% if current_user && current_user.profile.empty? %>
-          <%= link_to 'Create a Profile', new_user_profile_path(current_user) %> | 
-        <% elsif !current_user.profile.empty? %>
-          <%= link_to 'View Your Profile', user_profile_path(current_user.id, current_user.profile) %> |
-          <%= link_to 'Edit Your Profile', edit_user_profile_path(current_user.id, current_user.profile) %> |
-        <% end %>
-          <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
-          <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%>
-        <p> Settings </p>
-        <ul>
-          <% if !current_user.profile.empty? %>
-            <li><%= link_to 'Delete My Profile', user_profile_path(current_user.id, current_user.profile), method: :delete %> </li>
-          <% end %>
-          <li><%= link_to 'Cancel My Account', edit_user_registration_path(current_user) %> </li>
-        </ul>
-      <% else %>
-        <%= link_to 'Email Sign Up', new_user_registration_path %> |
-        <%= link_to 'Log in', new_user_session_path %> |
-      <% end %>
-    </nav>
-
+   <nav class="navigation">
+     <% if user_signed_in? %>
+       <%= link_to 'Home', root_path %> |
+       <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
+     <% if current_user && current_user.profile.empty? %>
+       <%= link_to 'Create a Profile', new_user_profile_path(current_user) %> |
+     <% end %>
+     <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
+     <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%> |
+      <div class="dropdown">
+       <a class="dropbtn"><i class="fa fa-cogs"></i>Account Options</a>
+        <div class="dropdown-content">
+         <% if !current_user.profile.empty? %>
+           <label class="sub-content">Profile</label>
+           <%= link_to 'View Your Profile', user_profile_path(current_user.id, current_user.profile) %>
+           <%= link_to 'Edit Your Profile', edit_user_profile_path(current_user.id, current_user.profile) %>
+           <%= link_to 'Delete My Profile', user_profile_path(current_user.id, current_user.profile), method: :delete %>
+         <% end %>
+           <label class="sub-content">Account</label>
+           <%= link_to 'Cancel Account', edit_user_registration_path(current_user) %>
+        </div>
+      </div>
+     <% else %>
+       <%= link_to 'Email Sign Up', new_user_registration_path %> |
+       <%= link_to 'Log in', new_user_session_path %> |
+     <% end %>
+   </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
   </body>
 </html>
