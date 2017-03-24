@@ -86,11 +86,15 @@ class AppIndex extends Component {
     });
 
     return(
-      <div className="recipe-list">
-        {newRecipes}
-        <ul>
-          {renderPageNumbers}
-          {`Current Page ${this.state.currentPage}`}
+      <div>
+        <ul className="recipe-list">
+          {newRecipes}
+        </ul>
+        <ul className="page-number">
+          <p>
+            {renderPageNumbers}
+          </p>
+          <p>{`Current Page ${this.state.currentPage}`}</p>
         </ul>
       </div>
     )

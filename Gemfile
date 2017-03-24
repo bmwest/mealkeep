@@ -19,6 +19,7 @@ gem 'figaro'
 gem 'fog'
 gem 'devise'
 gem 'sendgrid-ruby'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
