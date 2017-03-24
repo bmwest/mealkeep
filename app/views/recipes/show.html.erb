@@ -6,12 +6,12 @@
 </div>
 
 <div class="recipe-container">
-  <div class="recipe-description">
-    <p><%= @recipe.description %></p>
+  <div class="recipe-time">
   </div>
 
-  <div class="recipe-time">
-    <p><%= @recipe.hours%> hr | <%= @recipe.minutes %> min</p>
+  <div class="recipe-description" contenteditable="true">
+    <h6><%= @recipe.hours%> hr | <%= @recipe.minutes %> min</h6>
+    <p><%= @recipe.description %></p>
   </div>
 
   <div class="recipe-media">

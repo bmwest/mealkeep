@@ -16,6 +16,10 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+window.onload = function() {
+    document.getElementById("notice").style.opacity = 1;
+}
 {
   sticky_class : 'sticky',
   custom_back_text: true, // Set this to false and it will pull the top level link name as the back text

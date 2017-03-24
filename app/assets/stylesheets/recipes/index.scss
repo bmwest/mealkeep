@@ -1,0 +1,32 @@
+h1 {
+  text-align: center;
+  margin: 5%;
+  font-weight: 200;
+  font-size: 65px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.recipe-item {
+    flex-basis: 30%;
+    margin: 1%;
+    text-align: center;
+    align-self: center;
+    box-sizing: border-box;
+    border-color: #B0C4DE;
+    background-color: #F5F5F5;
+}
+
+.recipe-list {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.page-number {
+  list-style: none;
+  display: inline-block;
+  padding: 5px;
+  align-self: center;
+}

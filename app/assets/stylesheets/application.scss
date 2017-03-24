@@ -15,11 +15,21 @@
 //= require foundation_and_overrides
 
  */
- .navigation {
+ body {
+   margin-top: 70px;
+ }
+
+ .notice {
+   background-color: #D9D9D9;
+   line-height: 40px;
+   top: 2px;
+ }
+ .top-bar {
+   margin: 0;
    padding: 10px;
    background-color: #D6ABB1;
    position: fixed;
-   z-index: 10;
+   top: 0px;
    width: 100%;
  }
  /* Dropdown Button */
@@ -57,10 +67,11 @@
  }
 
 .sub-content {
-  background-color: grey;
+  background-color: #dcdcdc;
 }
+
  /* Change color of dropdown links on hover */
- .dropdown-content a:hover {background-color: #FAFAFA}
+ .dropdown-content a:hover {background-color: #F5F5F5}
 
  /* Show the dropdown menu on hover */
  .dropdown:hover .dropdown-content {
@@ -69,5 +80,5 @@
 
  /* Change the background color of the dropdown button when the dropdown content is shown */
  .dropdown:hover .dropbtn {
-     background-color: #FAFAFA;
+     background-color: #D6ABB1;
  }

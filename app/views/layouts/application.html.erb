@@ -7,12 +7,11 @@
     <title>plate.</title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-   <nav class="navigation">
+   <nav class="top-bar" data-topbar role="navigation">
      <% if user_signed_in? %>
        <%= link_to 'Home', root_path %> |
        <%= link_to 'Log out', destroy_user_session_path, method: :delete %> |
@@ -22,17 +21,17 @@
      <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
      <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%> |
       <div class="dropdown">
-       <a class="dropbtn"><i class="fa fa-cogs"></i>Account Options</a>
-        <div class="dropdown-content">
-         <% if !current_user.profile.empty? %>
-           <label class="sub-content">Profile</label>
-           <%= link_to 'View Your Profile', user_profile_path(current_user.id, current_user.profile) %>
-           <%= link_to 'Edit Your Profile', edit_user_profile_path(current_user.id, current_user.profile) %>
-           <%= link_to 'Delete My Profile', user_profile_path(current_user.id, current_user.profile), method: :delete %>
-         <% end %>
-           <label class="sub-content">Account</label>
-           <%= link_to 'Cancel Account', edit_user_registration_path(current_user) %>
-        </div>
+          <a class="dropbtn"><i class="fa fa-cogs"></i>Account Options</a>
+          <div class="dropdown-content">
+           <% if !current_user.profile.empty? %>
+             <label class="sub-content">Profile</label>
+             <%= link_to 'View Your Profile', user_profile_path(current_user.id, current_user.profile) %>
+             <%= link_to 'Edit Your Profile', edit_user_profile_path(current_user.id, current_user.profile) %>
+             <%= link_to 'Delete My Profile', user_profile_path(current_user.id, current_user.profile), method: :delete %>
+           <% end %>
+             <label class="sub-content">Account</label>
+             <%= link_to 'Cancel Account', edit_user_registration_path(current_user) %>
+          </div>
       </div>
      <% else %>
        <%= link_to 'Email Sign Up', new_user_registration_path %> |
@@ -44,5 +43,6 @@
 
     <%= yield %>
 
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>

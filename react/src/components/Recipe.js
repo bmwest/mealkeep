@@ -2,14 +2,15 @@ import React from 'react'
 
 const Recipe = (props) => {
   return (
-    <li>
-      <ul>
-        <li>{props.photo} photo goes here</li>
-        <a href={`http://localhost:3000/recipes/` + props.id}>{props.name}</a>
-        <li>{props.description}</li>
-        <li>{props.hours} hr | {props.minutes} min </li>
-      </ul>
-    </li>
+    <div className="recipe-item">
+      <h4><a href={`http://localhost:3000/recipes/` + props.id}>{props.name}</a></h4>
+
+        <a href={`http://localhost:3000/recipes/` + props.id}>{props.photo} photo goes here</a>
+        <p>{props.description}</p>
+        <div className="time">
+          <p>{props.hours} hr | {props.minutes} min </p>
+        </div>
+    </div>
   )
   console.log(recipe)
 }
