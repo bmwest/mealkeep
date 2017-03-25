@@ -3,6 +3,7 @@ class Recipe < ApplicationRecord
   validates :description, presence: false
   validates :minutes, presence: true
   belongs_to :user
+  has_many :instructions
 
   MINUTES = [0, 5,10, 15,
             20, 25, 30, 35,
