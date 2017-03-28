@@ -20,7 +20,7 @@ class AppIndex extends Component {
   }
 
   getData() {
-    fetch('https://quiet-scrubland-40971.herokuapp.com/api/v1/recipes', {
+    fetch('http://localhost:3000/api/v1/recipes', {
       credentials: 'same-origin'
     })
     .then(response => {

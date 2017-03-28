@@ -19,7 +19,8 @@
        <%= link_to 'Create a Profile', new_user_profile_path(current_user) %> |
      <% end %>
      <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
-     <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%> |
+     <%= link_to 'Add Custom Recipe', new_user_recipe_path(current_user)%> |
+     <%= link_to 'Browse', browse_course_path %> |
       <div class="dropdown">
           <a class="dropbtn"><i class="fa fa-cogs"></i>Account Options</a>
           <div class="dropdown-content">

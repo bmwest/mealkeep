@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'browse/course'
+  get 'browse/region'
+  get 'browse/ingredient'
+
   get 'welcome/index'
   get 'welcome/show'
   devise_for :users
