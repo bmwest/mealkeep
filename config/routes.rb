@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'browse/course'
+  get 'browse/breakfast'
   get 'browse/region'
   get 'browse/ingredient'
 

@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe BrowseController, type: :controller do
 
-  describe "GET #index" do
+  describe "GET #breakfast" do
     it "returns http success" do
-      get :index
+      get :breakfast
       expect(response).to have_http_status(:success)
     end
   end
