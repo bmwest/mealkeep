@@ -22,7 +22,7 @@
      <%= link_to 'Add Custom Recipe', new_user_recipe_path(current_user)%> |
      <%= link_to 'Browse', browse_breakfast_path %> |
       <div class="dropdown">
-          <a class="dropbtn"><i class="fa fa-cogs"></i>Account Options</a>
+          <a class="dropbtn"><i class="fa fa-cogs"></i></a>
           <div class="dropdown-content">
            <% if !current_user.profile.empty? %>
              <label class="sub-content">Profile</label>
