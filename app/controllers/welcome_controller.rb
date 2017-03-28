@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   def show
     @name = "Briana West"
     @email = " brianawest.m@gmail.com "
-    @github = " github.com/bmwest "
-    @linked_in = " linkedin.com/in/brianawest/ "
+    @github = " bmwest "
+    @linked_in = " brianawest "
   end
 end
