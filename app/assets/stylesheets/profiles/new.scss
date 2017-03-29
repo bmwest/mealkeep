@@ -1,14 +1,30 @@
 .profile-starter {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  margin-left: 30%;
 }
 
 .profile-starter p {
+  margin-right: 35%;
+  padding: 10px;
+  background-color: #84ABAA;
   font-size: 35px;
   font-weight: 200;
 }
 
-.profile-starter ul {
-  display: inline;
+.profile-starter li {
+  font-weight: 200;
+  display: block;
   list-style: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 50%;
+  background-color: #DED1B6;
+}
+
+.profile-starter ul {
+  margin-left:  10px;
+}
+
+.profile-form, .actions {
+  margin-left: 15%;
+  margin-right: 15%;
 }

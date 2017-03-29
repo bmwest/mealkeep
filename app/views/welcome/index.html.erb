@@ -1,4 +1,21 @@
-<h1><%= @greetings.sample %></h1>
+<body class="welcome container">
+<h1 class="greeting-header"><%= @greetings.sample %></h1>
 
-<div class="home-body">
+<div class="recipe-demo">
+  <div class="user-list">
+    <% if user_signed_in? %>
+      <% @recipes.each do |r| %>
+        <div class="recipe-item">
+          <p>
+            <h4><%= link_to r.name, recipe_path(r) %></h4>
+            <%= link_to "photo goes here", recipe_path(r) %></h4>
+            <p><%= r.description %></p>
+            <div class="time">
+              <p><%= r.hours%> hr | <%= r.minutes %> min</p>
+            </div>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
