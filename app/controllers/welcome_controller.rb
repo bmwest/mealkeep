@@ -4,8 +4,10 @@ class WelcomeController < ApplicationController
                   "Who's hungry?", "Hey, let's eat",
                   "There's never a bad time for food."]
 
-  @user = current_user
-  @recipes = @user.recipes.sample(3)
+    if user_signed_in?
+      @user = current_user
+      @recipes = @user.recipes.sample(3)
+    end
   end
 
   def show
