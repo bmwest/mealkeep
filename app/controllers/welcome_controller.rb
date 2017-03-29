@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   def index
+    @greetings = ["I think it's time for some food.",
+                  "Who's hungry?", "Hey, let's eat",
+                  "There's never a bad time for food."]
   end
 
   def show

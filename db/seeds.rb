@@ -26,7 +26,8 @@ end
 36.times do
   Recipe.create(name: Faker::Hipster.word,
                 description: Faker::Hipster.paragraph,
-                minutes: Faker::Number.between(1, 300),
+                hours: Faker::Number.between(1, 8),
+                minutes: Faker::Number.between(1, 59),
                 user: User.all.sample)
 end
 

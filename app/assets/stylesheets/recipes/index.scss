@@ -24,9 +24,15 @@ h1 {
   padding-left: 0;
 }
 
+.pagination {
+  display: inline;
+
+  margin-left: 10%;
+}
+
 .page-number {
   list-style: none;
-  display: inline-block;
   padding: 5px;
   align-self: center;
+  width: 20px;
 }

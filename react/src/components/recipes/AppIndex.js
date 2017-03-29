@@ -60,6 +60,7 @@ class AppIndex extends Component {
           minutes={recipe.minutes}
           hours={recipe.hours}
           photo={recipe.photo}
+          instructions={recipe.instructions}
         />
       )
     });
@@ -90,11 +91,8 @@ class AppIndex extends Component {
         <ul className="recipe-list">
           {newRecipes}
         </ul>
-        <ul className="page-number">
-          <p>
-            {renderPageNumbers}
-          </p>
-          <p>{`Current Page ${this.state.currentPage}`}</p>
+        <ul className="pagination">
+          {renderPageNumbers}{`Current Page ${this.state.currentPage}`}
         </ul>
       </div>
     )

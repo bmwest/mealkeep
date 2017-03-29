@@ -12,7 +12,6 @@ const Recipe = (props) => {
         </div>
     </div>
   )
-  console.log(recipe)
 }
 
 export default Recipe;
