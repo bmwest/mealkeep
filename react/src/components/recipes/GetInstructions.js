@@ -13,28 +13,38 @@ class GetInstructions extends Component {
     this.handleButtonClick = this.handleButtonClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
+    //
+    // getSteps() {
+    //   fetch(`http://localhost:3000/api/recipes/${this.props.recipe}/instructions`)
+    //   .then(response => {
+    //     if (response.ok) {
+    //       return response;
+    //     } else {
+    //       let errorMessage = `${response.status} ($response.statusText)`,
+    //       error = new Error(errorMessage);
+    //       throw(error);
+    //     }
+    //   })
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(body => {
+    //     this.setState({steps: body});
+    //   })
+    //   .catch(error => console.error(`Error in fetch: ${error.message}`));
+    // }
 
-  getData() {
-    fetch('http://localhost:3000/api/v1/instructions', {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => {
-      return response.json();
-    })
-    .then(body => {
-      this.setState({steps: body});
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+    // let instructions = this.props.instructions.map((instruction) => {
+    //   return (
+    //     <GetInstructions
+    //       id={instruction.id}
+    //       recipe={intruction.recipe_id}
+    //       step={instruction.step}
+    //       />
+    //   )
+
+    // import GetInstructions from './GetInstructions';
+    
 
   handleFormSubmit(event) {
     event.preventDefault()
@@ -69,7 +79,7 @@ class GetInstructions extends Component {
       <InstructionForm
       handleFormSubmit={this.handleFormSubmit}
       />
-      <InstructionList steps={this.state.steps}
+      <InstructionList steps={this.props.steps}
       handleButtonClick={this.handleButtonClick}/>
       </div>
     )

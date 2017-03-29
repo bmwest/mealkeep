@@ -60,7 +60,6 @@ class AppIndex extends Component {
           minutes={recipe.minutes}
           hours={recipe.hours}
           photo={recipe.photo}
-          instructions={recipe.instructions}
         />
       )
     });
@@ -99,4 +98,4 @@ class AppIndex extends Component {
   }
 };
 
-export default AppIndex
+export default AppIndex;

@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppIndex from './components/recipes/AppIndex';
-import GetInstructions from './components/instructions/GetInstructions';
+import GetInstructions from './components/recipes/GetInstructions';
 import ReactBreakfast from './components/breakfast/ReactBreakfast';
 
 $(function() {

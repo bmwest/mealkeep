@@ -8,6 +8,7 @@
         <div class="recipe-item">
           <p>
             <h4><%= link_to r.name, recipe_path(r) %></h4>
+            <%= link_to "API", api_v1_recipe_instructions_path(r) %></h4>
             <%= link_to "photo goes here", recipe_path(r) %></h4>
             <p><%= r.description %></p>
             <div class="time">
