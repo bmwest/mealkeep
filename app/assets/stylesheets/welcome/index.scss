@@ -1,0 +1,26 @@
+.greeting-header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  top: 0;
+}
+
+body.welcome {
+   background: url(https://media.giphy.com/media/26xBKmPkJLYvGV9yE/giphy.gif);
+   height: 100%;
+   width: 100%;
+ }
+
+ .recipe-demo {
+   margin-top: 200px;
+ }
+
+ .user-list {
+   margin-left: 30%;
+   margin-right: 30%;
+   padding: 10px;
+   background-color: #ECE9BE;
+   display: block;
+ }
