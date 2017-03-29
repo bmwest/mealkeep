@@ -50,7 +50,8 @@ class RecipesController < ApplicationController
     @user = current_user
     @recipe = Recipe.find(params[:id])
     @header = "#{@recipe.name}"
-    # render json: Instruction.where(recipe: @recipe).order(updated_at: :asc) 
+    @instructions = @recipe.instructions
+    @instruction = Instruction.new
   end
 
   def destroy
