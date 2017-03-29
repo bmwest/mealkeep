@@ -1,8 +1,8 @@
 class Api::V1::InstructionsController < ApplicationController
   def index
     @user = current_user
-    @recipes = @user.recipes
-    # @recipe = Recipe.find(params[:recipe_id])
+    @recipes = Recipe.where(user: @user)
+    @instruction = Instruction.where(recipe: @recipe).order(updated_at: :desc)
     render json: Instruction.where(recipe: @recipes).order(updated_at: :desc)
   end
 end
