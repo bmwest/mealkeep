@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+
+$("button").click(function() {
+  $("#instruction-form").toggle();
+});

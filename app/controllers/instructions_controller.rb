@@ -1,24 +1,25 @@
 class InstructionsController < ApplicationController
-  def new
-    @user = current_user
-    @recipe = Recipe.where(user: @user)
-    @recipe.user = @user
-    @ingredient = Ingredient.new
-    @ingredient.recipe = @recipe
+  def create
+    @recipe = Recipe.find(params[:recipe_id])
+    @instruction = Instruction.new(instruction_params)
+    @instruction.recipe = @recipe
+
+    if @instruction.save
+      flash[:notice] = "Looking good so far!"
+      redirect_to recipe_path(@recipe) 
+    end
   end
 
-  def create
-    @user = current_user
-    @recipe = Recipe.where(user: @user)
-    @recipe.user = @user
-    @ingredient = Ingredient.new
-    @ingredient.recipe = @recipe
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @instruction = Instruction.find(params[:id])
+    @instruction.destroy
+    redirect_to recipe_path(@recipe), notice: 'Recipe updated.'
+  end
 
-    if @recipe.save
-      redirect_to user_recipe_path(id: @recipe, user_id: @user)
-      flash[:notice] = "Your Recipe Book has a new entry!"
-    else
-      render :new
-    end
+  private
+
+  def instruction_params
+    params.require(:instruction).permit(:step)
   end
 end
