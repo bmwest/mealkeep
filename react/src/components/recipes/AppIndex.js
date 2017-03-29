@@ -60,6 +60,7 @@ class AppIndex extends Component {
           minutes={recipe.minutes}
           hours={recipe.hours}
           photo={recipe.photo}
+          ingredients={recipe.ingredients}
         />
       )
     });
