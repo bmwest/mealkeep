@@ -15,8 +15,9 @@ class Recipe extends Component {
         <div className="time">
           <p>{this.props.hours} hr | {this.props.minutes} min </p>
         </div>
-        <ul className="hide-me">
-          <InstructionList currentSteps={this.props.instructions}/>
+        <ul className="">
+          <InstructionList currentSteps={this.props.instructions}
+            recipe_id={this.props.id}/>
         </ul>
       </div>
     )
