@@ -2,7 +2,7 @@
 
   <div class="error-messages">
     <% if @instruction.errors.any? %>
-      <p><%= pluralize(@instruction.errors.count, "error(s)") %> prohibited this theater from being saved:</p>
+      <p><%= pluralize(@instruction.errors.count, "error(s)") %> prohibited this instruction from being saved:</p>
       <ul>
         <% @instruction.errors.full_messages.each do |m| %>
           <li><%= m %></li>

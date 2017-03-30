@@ -7,40 +7,64 @@
 
 <div class="recipe-container">
   <div class="recipe-time">
-  </div>
+</div>
 
-  <div class="recipe-description" contenteditable="true">
-    <h6><%= @recipe.hours%> hr | <%= @recipe.minutes %> min</h6>
-    <p><%= @recipe.description %></p>
-  </div>
+<div class="recipe-description" contenteditable="true">
+  <h6><%= @recipe.hours%> hr | <%= @recipe.minutes %> min</h6>
+  <p><%= @recipe.description %></p>
+</div>
 
-  <div class="recipe-media">
-    <p><%= @recipe.video %></p>
-    <p><%= @recipe.photo %></p>
-  </div>
+<div class="recipe-media">
+  <p><%= @recipe.video %></p>
+  <p><%= @recipe.photo %></p>
+</div>
 
-  <div class="instruction-directory">
-    <% if @instructions.empty? %>
-      <p>Add some instructions!</p><br>
+<div class="instruction-directory">
+  <% if @instructions.empty? %>
+    <p>Add some instructions!</p><br>
+  <% end %>
+</div>
+
+<div class="instruction-form">
+  <a href="#" class="instruction-toggle">+ New Step</a>
+  <br><br>
+  <div id="instruction-form" style="display: none">
+    <%= render 'instructions/instruct_form' %>
+  </div><br>
+</div>
+
+<div class="ingredient-form">
+  <a href="#" class="ingredient-toggle">+ New Ingredient</a>
+  <br><br>
+  <div id="ingredient-form" style="display: none">
+    <%= render 'ingredients/ingredient_form' %>
+  </div><br>
+</div>
+
+<div class="recipe-ingredients">
+  <% if @ingredients.any? %>
+  <p>Ingredients</p>
+  <ul>
+    <% @ingredients.each do |ing| %>
+    <li>(<%= ing.volume1 %> <%= ing.volume2 %>) <%= ing.unit %>
+      <%= ing.food_item %>
+      <%= link_to "-", recipe_ingredient_path(@recipe, ing),
+      method: :delete%></li>
+      <% end %>
+    </ul>
     <% end %>
   </div>
 
-  <div class="instruction-block">
-    <button>+ New Step</button>
-    <br><br>
-    <div id="instruction-form" style="display: none">
-      <%= render 'instructions/instruct_form' %>
-    </div><br><br>
-
-    <div class="recipe-instructions">
-      <% if @instructions.any? %>
+  <div class="recipe-instructions">
+    <% if @instructions.any? %>
       <p>How To</p>
       <ul>
         <% @instructions.each do |i| %>
           <li><%= i.step %> <%= link_to "-", recipe_instruction_path(@recipe, i), method: :delete%></li>
         <% end %>
-      </ul>
-      <% end %>
-    </div>
+      </ul><br><br>
+    <% end %>
   </div>
-</div>
+
+
+  </div>
