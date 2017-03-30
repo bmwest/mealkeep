@@ -9,6 +9,7 @@ class InstructionList extends Component {
       steps: []
     }
     this.getSteps = this.getSteps.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleButtonClick = this.handleButtonClick.bind(this)
   }
 
@@ -37,6 +38,9 @@ class InstructionList extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
+  handleFormSubmit(event) {
+    event.preventDefault();
+  }
   handleButtonClick(event) {
     let oldStep = event.target.value
     let newSteps = this.state.steps.filter(step => {
@@ -46,7 +50,7 @@ class InstructionList extends Component {
     alert('Instruction removed')
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getSteps();
   }
 
@@ -62,9 +66,13 @@ class InstructionList extends Component {
         )
     })
     return (
+      <div>
+        <InstructionForm
+      />
       <ul>
         {stepItems}
       </ul>
+      </div>
     )
   }
 }

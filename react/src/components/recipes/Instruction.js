@@ -2,7 +2,7 @@ import React from 'react'
 
 const Instruction = (props) => {
   return (
-    <li>
+    <li className="">
       {props.stepItems}
       <button type="button" onClick={props.handleButtonClick}>Remove</button>
     </li>
