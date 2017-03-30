@@ -13,10 +13,11 @@ class InstructionList extends Component {
   }
 
   getSteps() {
+    console.log(this.props.recipe_id)
     if(!this.props.recipe_id){
       return []
     }
-      fetch(`http://localhost:3000/api/recipes/${this.props.recipe_id}/instructions`)
+      fetch(`http://localhost:3000/api/v1/recipes/${this.props.recipe_id}/instructions`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -30,6 +31,7 @@ class InstructionList extends Component {
         return response.json();
       })
       .then(body => {
+        console.log(body)
         this.setState({steps: body});
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -59,7 +61,6 @@ class InstructionList extends Component {
           />
         )
     })
-
     return (
       <ul>
         {stepItems}

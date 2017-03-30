@@ -41,7 +41,7 @@ class AppIndex extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getData();
   }
 
