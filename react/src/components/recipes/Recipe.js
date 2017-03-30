@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import InstructionList from './InstructionList'
 
 class Recipe extends Component {
   constructor(props) {
@@ -15,10 +14,6 @@ class Recipe extends Component {
         <div className="time">
           <p>{this.props.hours} hr | {this.props.minutes} min </p>
         </div>
-        <ul className="">
-          <InstructionList currentSteps={this.props.instructions}
-            recipe_id={this.props.id}/>
-        </ul>
       </div>
     )
   }
