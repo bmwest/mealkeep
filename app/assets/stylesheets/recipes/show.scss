@@ -1,9 +1,21 @@
+.recipe-header h1 {
+  position: fixed;
+  top: 5%;
+  margin-left: 0%;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
 .recipe-permissions {
   text-align: center;
+  margin-top: 250px;
 }
 
 .recipe-container {
-  flex-basis: 50%
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  flex-basis: 50%;
+  margin-top: 10px;
 }
 
 .recipe-container h6 {
@@ -49,4 +61,53 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   width: 400px;
   height: 200px;
+  z-index: -1;
+}
+
+.form-container {
+  margin-left: 5%;
+}
+
+.submit {
+  padding-top: 5px;
+}
+
+.recipe-ingredients {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  margin-right: 60%;
+  background-color: #ECE9BE;
+}
+
+.recipe-ingredients ul {
+  font-size: 18px;
+  font-weight: 200;
+  list-style: none;
+  padding-bottom: 10px;
+  background-color: #DBECEF;
+  padding-left: 15%;
+  margin-bottom: 20%;
+  margin-left: 0px;
+  margin-right: 40px;
+  text-align: justify;
+}
+
+.recipe-ingredients p {
+  padding-left: 50%;
+  font-size: 45px;
+  line-height: 32px;
+  font-weight: 100;
+  margin-bottom: 0px;
+}
+
+.recipe-ingredients li {
+  padding: 0px;
+  line-height: 20px;
+}
+
+.recipe-ingredients a {
+  font-size: 30px;
+}
+
+.recipe-instructions li {
+
 }
