@@ -52,6 +52,11 @@ class RecipesController < ApplicationController
     @header = "#{@recipe.name}"
     @instructions = @recipe.instructions
     @instruction = Instruction.new
+    @volume1_collection = Ingredient::VOLUME_ONE
+    @volume2_collection = Ingredient::VOLUME_TWO
+    @unit_collection = Ingredient::UNIT
+    @ingredients = @recipe.ingredients
+    @ingredient = Ingredient.new
   end
 
   def destroy
