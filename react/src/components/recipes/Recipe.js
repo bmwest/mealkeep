@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react';
+import InstructionList from './InstructionList'
 
-const Recipe = (props) => {
-  return (
-    <div className="recipe-item">
-      <h4><a href={`http://localhost:3000/recipes/` + props.id}>{props.name}</a></h4>
+class Recipe extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-        <a href={`http://localhost:3000/recipes/` + props.id}>{props.photo} photo goes here</a>
-        <p>{props.description}</p>
+  render() {
+    return(
+      <div className="recipe-item">
+        <h4><a href={`http://localhost:3000/recipes/` + this.props.id}>{this.props.name}</a></h4>
+        <a href={`http://localhost:3000/recipes/` + this.props.id}>{this.props.photo} photo goes here</a>
+        <p>{this.props.description}</p>
         <div className="time">
-          <p>{props.hours} hr | {props.minutes} min </p>
+          <p>{this.props.hours} hr | {this.props.minutes} min </p>
         </div>
-    </div>
-  )
-}
+        <ul className="">
+          <InstructionList currentSteps={this.props.instructions}
+            recipe_id={this.props.id}/>
+        </ul>
+      </div>
+    )
+  }
+};
 
 export default Recipe;

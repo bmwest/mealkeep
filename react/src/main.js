@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppIndex from './components/recipes/AppIndex';
-import GetInstructions from './components/instructions/GetInstructions';
+import InstructionList from './components/recipes/InstructionList';
 import ReactBreakfast from './components/breakfast/ReactBreakfast';
 
 $(function() {
@@ -13,7 +13,7 @@ $(function() {
   if (reactApp) {
     ReactDOM.render(<AppIndex />, reactApp);
   } else if (reactSteps) {
-    ReactDOM.render(<GetInstructions />, reactSteps)
+    ReactDOM.render(<InstructionList />, reactSteps)
   } else if (reactBreakfast) {
     ReactDOM.render(<ReactBreakfast />, reactBreakfast)
   }
