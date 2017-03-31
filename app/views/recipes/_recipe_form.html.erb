@@ -1,43 +1,47 @@
 <%= form_for @recipe do |f| %>
-
-<div class="row">
-  <div class="small-2 medium-4 large-8 columns">
-    <%= f.label :name %>
-    <%=f.text_field :name %><br>
-  </div>
-</div>
-
-<div class="row">
+<div class="recipe-form">
+  <div class="row">
     <div class="small-2 medium-4 large-8 columns">
-      <%= f.label :description %>
-      <%= f.text_area :description %><br><br>
+      <%= f.label :name %>
+      <%=f.text_field :name %><br>
     </div>
   </div>
-
-    <div class="row">
-      <div class="large-2 columns">
-        <%= f.label :minutes %><br>
-        <%= f.select(:minutes, options_for_select(@minutes_collection, selected: recipe.minutes)) %>
-      </div>
-      <div class="small-3 columns">
-        <div class-"row collapse">
-          <%= f.label :hours %><br>
-          <%= f.select(:hours, options_for_select(@hours_collection, selected: recipe.hours)) %>
-        </div>
-      </div>
-    </div>
-  <br><br><br><br><br>
 
   <div class="row">
-    <div class="">
-      <%= f.label :photo, "Upload Photo File:"%><br>
-      <%= f.file_field :photo %><br><br>
+      <div class="small-2 medium-4 large-8 columns">
+        <%= f.label :description %>
+        <%= f.text_area :description %><br><br>
+      </div>
+    </div>
 
-      <%= f.label :video, "Upload Video File:"%><br>
-      <%= f.file_field :video %><br><br>
+      <div class="row">
+        <div class="small">
+          <div class="time-count">
+            <%= f.label :minutes %><br>
+            <%= f.select(:minutes, options_for_select(@minutes_collection, selected: recipe.minutes)) %>
+          </div>
+        </div>
+        <div class="small">
+          <div class="time-count">
+            <%= f.label :hours %><br>
+            <%= f.select(:hours, options_for_select(@hours_collection, selected: recipe.hours)) %>
+          </div>
+        </div>
+      </div>
+    <br><br><br><br><br>
+
+    <div class="row">
+      <div class="media">
+        <%= f.label :photo, "Upload Photo File:"%><br>
+        <%= f.file_field :photo %><br><br>
+
+        <%= f.label :video, "Upload Video File:"%><br>
+        <%= f.file_field :video %><br><br>
+      </div>
     </div>
   </div>
 
-  <%= f.submit "Add Custom Recipe"%><br><br>
-
+  <div class="save">
+    <%= f.submit "Add Custom Recipe"%><br><br>
+  </div>
 <% end %>

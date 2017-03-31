@@ -72,7 +72,7 @@ class AppIndex extends Component {
 
     let renderPageNumbers = pageNumbers.map(number => {
       let icon = `>`
-      if (this.state.currentPage > 1) {
+      if (this.state.currentPage === pageNumbers.length) {
         icon = `<`
       }
       return (
@@ -91,9 +91,14 @@ class AppIndex extends Component {
         <ul className="recipe-list">
           {newRecipes}
         </ul>
-        <ul className="pagination">
-          {renderPageNumbers}{`Current Page ${this.state.currentPage}`}
-        </ul>
+        <div className="pagination">
+          <ul>
+            {renderPageNumbers}
+          </ul>
+          <p>
+            {`Current Page ${this.state.currentPage}`}
+          </p>
+        </div>
       </div>
     )
   }

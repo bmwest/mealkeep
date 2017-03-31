@@ -1,11 +1,16 @@
-<h1><%= @header %></h1>
-
-<div class="recipe-permissions">
-  <%= link_to "Edit", edit_recipe_path(@recipe) %> |
-  <%= link_to "Remove", user_recipe_path(@recipe), method: :delete%>
+<div class="recipe-banner">
 </div>
 
+<div class="recipe-header">
+  <h1><%= @header %></h1>
+</div>
+
+
 <div class="recipe-container">
+  <div class="recipe-permissions">
+    <%= link_to "Edit", edit_recipe_path(@recipe) %> |
+    <%= link_to "Remove", user_recipe_path(@recipe), method: :delete%>
+  </div>
   <div class="recipe-time">
 </div>
 
@@ -19,52 +24,73 @@
   <p><%= @recipe.photo %></p>
 </div>
 
-<div class="instruction-directory">
+<div class="data-directory">
   <% if @instructions.empty? %>
     <p>Add some instructions!</p><br>
+  <% elsif @ingredients.empty? %>
+    <p>Add some ingredients!</p><br>
   <% end %>
 </div>
 
-<div class="instruction-form">
-  <a href="#" class="instruction-toggle">+ New Step</a>
-  <br><br>
-  <div id="instruction-form" style="display: none">
-    <%= render 'instructions/instruct_form' %>
-  </div><br>
-</div>
+<br>
 
-<div class="ingredient-form">
-  <a href="#" class="ingredient-toggle">+ New Ingredient</a>
-  <br><br>
-  <div id="ingredient-form" style="display: none">
-    <%= render 'ingredients/ingredient_form' %>
-  </div><br>
-</div>
-
-<div class="recipe-ingredients">
-  <% if @ingredients.any? %>
-  <p>Ingredients</p>
-  <ul>
-    <% @ingredients.each do |ing| %>
-    <li>(<%= ing.volume1 %> <%= ing.volume2 %>) <%= ing.unit %>
-      <%= ing.food_item %>
-      <%= link_to "-", recipe_ingredient_path(@recipe, ing),
-      method: :delete%></li>
-      <% end %>
-    </ul>
-    <% end %>
+<div class="form-container">
+  <div class="ingredient-form">
+    <a href="#" class="ingredient-toggle">+ New Ingredient</a>
+    <br><br>
+    <div id="ingredient-form" style="display: none">
+      <%= render 'ingredients/ingredient_form' %>
+    </div><br><br>
   </div>
 
-  <div class="recipe-instructions">
-    <% if @instructions.any? %>
-      <p>How To</p>
+  <div class="instruction-form">
+    <a href="#" class="instruction-toggle">+ New Step</a>
+    <br><br>
+    <div id="instruction-form" style="display: none">
+      <%= render 'instructions/instruct_form' %>
+    </div><br>
+  </div>
+</div>
+
+<div class="recipe-content">
+  <div class="recipe-ingredients">
+    <% if @ingredients.any? %>
+      <p>Ingredients</p>
       <ul>
-        <% @instructions.each do |i| %>
-          <li><%= i.step %> <%= link_to "-", recipe_instruction_path(@recipe, i), method: :delete%></li>
+        <% @ingredients.each do |ing| %>
+          <% if ing.volume1 == "0" && ing.volume2 != "0" %>
+            <li><i class="fa fa-angle-right"></i> <%= ing.volume2 %> <%= ing.unit %> -
+              <%= ing.food_item %>
+              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
+              method: :delete%></li>
+          <% elsif ing.volume1 != "0" && ing.volume2 == "0" %>
+            <li><i class="fa fa-angle-right"></i> <%= ing.volume1 %> <%= ing.unit %> -
+              <%= ing.food_item %>
+              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
+            method: :delete%></li>
+          <% elsif ing.volume1 != "0" && ing.volume2 != "0" %>
+            <li><i class="fa fa-angle-right"></i> <%= ing.volume1 %> <%= ing.volume2 %> <%= ing.unit %> -
+              <%= ing.food_item %>
+              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
+            method: :delete%></li>
+          <% end %>
         <% end %>
-      </ul><br><br>
+      </ul>
     <% end %>
   </div>
+
+    <div class="recipe-instructions">
+      <% if @instructions.any? %>
+        <p>How To</p>
+        <ul>
+          <% @instructions.each do |i| %>
+            <li><%= i.step %> <%= link_to "-", recipe_instruction_path(@recipe, i), method: :delete%></li>
+          <% end %>
+        </ul><br><br>
+      <% end %>
+    </div>
+</div>
+
 
 
   </div>

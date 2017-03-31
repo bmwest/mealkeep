@@ -4,18 +4,20 @@
 <div class="recipe-demo">
   <div class="user-list">
     <% if user_signed_in? %>
+    <ul class="coler-me">
       <% @recipes.each do |r| %>
         <div class="recipe-item">
           <p>
             <h4><%= link_to r.name, recipe_path(r) %></h4>
-            <%= link_to "photo goes here", recipe_path(r) %></h4>
-            <p><%= r.description %></p>
+            <%= link_to "add photo", recipe_path(r) %></h4>
+            <p class="description"><%= r.description %></p>
             <div class="time">
               <p><%= r.hours%> hr | <%= r.minutes %> min</p>
             </div>
           </p>
         </div>
       <% end %>
+    </ul>
     <% end %>
   </div>
 </div>

@@ -15,10 +15,12 @@
 //= require foundation
 //= require_tree .
 
-$(".instruction-toggle").click(function() {
+$(".instruction-toggle").click(function($event) {
+  $event.preventDefault();
   $("#instruction-form").toggle();
 });
 
-$(".ingredient-toggle").click(function() {
+$(".ingredient-toggle").click(function($event) {
+  $event.preventDefault();
   $("#ingredient-form").toggle();
 });

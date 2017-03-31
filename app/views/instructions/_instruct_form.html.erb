@@ -11,13 +11,14 @@
     <% end %>
   </div>
 
-  <div>
-    <%= f.label :step %><br>
-    <%= f.text_field :step %>
-  </div><br>
+  <div class="row">
+    <div class="large-11 small-11 large-11 columns">
+      <%= f.label :step %><br>
+      <%= f.text_field :step %>
+    </div><br><br>
 
-  <div>
-    <%= f.submit '+'%><br><br>
+    <div class="save">
+      <%= f.submit '+'%><br><br>
+    </div>
   </div>
-
 <% end %>

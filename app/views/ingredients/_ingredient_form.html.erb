@@ -10,29 +10,29 @@
       </ul>
     <% end %>
   </div>
-
-  <div>
-    <%= f.label :volume1 %><br>
+<div class="row">
+  <div class="small-6 medium-3 large-1 columns">
+    <%= f.label :volume1, "value" %><br>
     <%= f.select(:volume1, options_for_select(@volume1_collection, selected: @ingredient.volume1)) %>
-  </div><br>
-
-  <div>
-    <%= f.label :volume2 %><br>
-    <%= f.select(:volume2, options_for_select(@volume2_collection, selected: @ingredient.volume2)) %>
-  </div><br>
-
-  <div>
-    <%= f.label :unit %><br>
-    <%= f.select(:unit, options_for_select(@unit_collection, selected: @ingredient.unit)) %>
-  </div><br>
-
-  <div>
-    <%= f.label :food_item %><br>
-    <%= f.text_field :food_item %>
-  </div><br>
-
-  <div>
-    <%= f.submit '+'%><br><br>
   </div>
 
+  <div class="small-6 medium-3 large-1 columns">
+    <%= f.label :volume2, "value" %><br>
+    <%= f.select(:volume2, options_for_select(@volume2_collection, selected: @ingredient.volume2)) %>
+  </div>
+
+  <div class="small-6 medium-3 large-1 columns">
+    <%= f.label :unit, "unit" %><br>
+    <%= f.select(:unit, options_for_select(@unit_collection, selected: @ingredient.unit)) %>
+  </div>
+
+  <div class="small-7 medium-8 large-8 columns">
+    <%= f.label :food_item, "ingredient" %><br>
+    <%= f.text_field :food_item %>
+  </div><br><br>
+
+  <div class="submit">
+    <%= f.submit '+'%><br><br>
+  </div>
+</div>
 <% end %>
