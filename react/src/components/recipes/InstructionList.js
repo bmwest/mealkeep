@@ -6,20 +6,32 @@ class InstructionList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      steps: []
+      steps: [],
+      step: ''
     }
-    this.getSteps = this.getSteps.bind(this)
+    this.postSteps = this.postSteps.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
-    this.handleButtonClick = this.handleButtonClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.getSteps = this.getSteps.bind(this)
+    this.clearForm = this.clearForm.bind(this)
   }
 
-  getSteps() {
-    console.log(this.props.recipe_id)
-    if(!this.props.recipe_id){
-      return []
-    }
-      fetch(`http://localhost:3000/api/v1/recipes/${this.props.recipe_id}/instructions`)
-      .then(response => {
+  handleChange(event) {
+    this.setState({step: event.target.value});
+  }
+
+  postSteps() {
+    let recipeId = document.getElementById('recipe-id').textContent;
+    let nextStep = this.state.step
+
+      fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ step: `${nextStep}` })
+      }).then(response => {
         if (response.ok) {
           return response;
         } else {
@@ -31,26 +43,47 @@ class InstructionList extends Component {
       .then(response => {
         return response.json();
       })
-      .then(body => {
-        console.log(body)
-        this.setState({steps: body});
+      .then(text => {
+        this.setState({ steps: text,
+                        step: ''});
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
   handleFormSubmit(event) {
     event.preventDefault();
-  }
-  handleButtonClick(event) {
-    let oldStep = event.target.value
-    let newSteps = this.state.steps.filter(step => {
-      return step.id !== oldStep.id
-    })
-    this.setState({ steps: newSteps })
-    alert('Instruction removed')
+    this.postSteps();
   }
 
-  componentWillMount() {
+  clearForm(event) {
+    let newStep = event.target.value
+    this.setState({ step: newStep})
+  }
+
+  getSteps() {
+    let recipeId = document.getElementById('recipe-id').textContent;
+    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} ($response.statusText)`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(body => {
+      this.setState({steps: body});
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  componentDidMount() {
     this.getSteps();
   }
 
@@ -62,12 +95,16 @@ class InstructionList extends Component {
             id={s.id}
             recipe={s.recipe_id}
             stepItems={s.step}
+            getAllSteps={this.getSteps}
           />
         )
     })
     return (
       <div>
         <InstructionForm
+        handleFormSubmit={this.handleFormSubmit}
+        handleChange={this.handleChange}
+        value={this.state.step}
       />
       <ul>
         {stepItems}

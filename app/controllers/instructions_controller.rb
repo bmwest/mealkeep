@@ -11,8 +11,8 @@ class InstructionsController < ApplicationController
     @user = current_user
     @recipe = Recipe.where(user: @user)
     @recipe.user = @user
-    @ingredient = Ingredient.new
-    @ingredient.recipe = @recipe
+    @instruction = Instruction.new
+    @instruction.recipe = @recipe
 
     if @recipe.save
       redirect_to user_recipe_path(id: @recipe, user_id: @user)
