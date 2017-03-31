@@ -24,10 +24,17 @@ h1 {
   padding-left: 0;
 }
 
-.pagination {
+.pagination ul{
   display: inline;
-
-  margin-left: 10%;
+  margin-left: 45%;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 200;
+}
+.pagination p{
+  margin-left: 44%;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 20px
 }
 
 .page-number {
@@ -36,3 +43,5 @@ h1 {
   align-self: center;
   width: 20px;
 }
+
+.page-number:hover { transform: scale(2.1); }

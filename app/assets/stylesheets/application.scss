@@ -22,15 +22,16 @@
  .notice {
    background-color: #D9D9D9;
    line-height: 40px;
-   top: 2px;
+   top: 0px;
  }
  .top-bar {
-   margin: 0;
+   margin: 0px;
    padding: 10px;
    background-color: #E1C9CF;
    position: fixed;
    top: 0px;
    width: 100%;
+   z-index: 3;
  }
  /* Dropdown Button */
  .dropbtn {

@@ -8,9 +8,12 @@
 }
 
 body.welcome {
-   background: url(https://media.giphy.com/media/26xBKmPkJLYvGV9yE/giphy.gif);
-   height: 100%;
-   width: 100%;
+  background: url(http://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  // https://media.giphy.com/media/rbdBcmgpFWA3m/giphy.gif
  }
 
  .recipe-demo {
@@ -21,7 +24,11 @@ body.welcome {
    z-index: -1;
    margin-left: 30%;
    margin-right: 30%;
-   padding: 10px;
-   background-color: #ECE9BE;
    display: block;
  }
+
+.recipe-item {
+  padding: 10px;
+  margin: 10px;
+ // background-color: #ECE9BE;
+}

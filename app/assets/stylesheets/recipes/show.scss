@@ -7,9 +7,18 @@
   z-index: 1;
 }
 
+.recipe-banner {
+  background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRf148EuQqC90pqKVJvjraTejon1-A5OKkMuwsnBfxRDlWq1foe);
+  opacity: 0.70;
+  text-align: center;
+  height: 250px;
+  z-index: -1;
+  top: 0px;
+}
+
 .recipe-permissions {
   text-align: center;
-  margin-top: 250px;
+  padding-bottom: 10px;
 }
 
 .recipe-container {
@@ -64,35 +73,62 @@
   z-index: -1;
 }
 
+.data-directory {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 200;
+}
 .form-container {
   margin-left: 5%;
 }
-
+.ingredient-form {
+  // margin-top: 10%;
+}
 .submit {
   padding-top: 5px;
 }
 
+.recipe-content {
+  background-color: #DBECEF;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  width: 900px;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  margin-bottom: 0%;
+}
+
 .recipe-ingredients {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  margin-right: 60%;
-  background-color: #ECE9BE;
+  display: inline-block;
+  margin: 12px;
+  margin-top: 0px;
+  float: left;
+  width: 40%;
+  height: auto;
+  text-align: justify;
+  color: black;
+  align-items: center;
+  list-style: none;
 }
 
 .recipe-ingredients ul {
   font-size: 18px;
   font-weight: 200;
   list-style: none;
+  padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #DBECEF;
-  padding-left: 15%;
-  margin-bottom: 20%;
+  background-color: #D9D9D9;
+  padding-left: 10%;
+  // margin-bottom: 20%;
   margin-left: 0px;
   margin-right: 40px;
   text-align: justify;
 }
 
 .recipe-ingredients p {
-  padding-left: 50%;
+  // padding-left: 50%;
   font-size: 45px;
   line-height: 32px;
   font-weight: 100;
@@ -108,6 +144,26 @@
   font-size: 30px;
 }
 
-.recipe-instructions li {
+.recipe-instructions {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  // margin-left: 45%;
+  height: auto;
+  margin: 12px;
+  padding-top: 42px;
+  // width: 25%;
+}
 
+.recipe-instructions p {
+  padding-left: 70%;
+  font-size: 45px;
+  line-height: 32px;
+  font-weight: 100;
+  margin-bottom: 0px;
+}
+
+.recipe-instructions li {
+  list-style: none;
+  background-color: white;
+  opacity: 0.80;
+  margin-bottom: 10px;
 }
