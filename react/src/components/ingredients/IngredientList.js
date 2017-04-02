@@ -7,10 +7,10 @@ class IngredientList extends Component {
     super(props)
     this.state = {
       ingredients: [],
-      vol1: '',
-      vol2: '',
-      unit: '',
-      food: ''
+      volume1: '0',
+      volume2: '0',
+      unit: '0',
+      food_item: ''
     }
     this.postFood = this.postFood.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -19,23 +19,31 @@ class IngredientList extends Component {
   }
 
   handleChange(event) {
-    this.setState({vol1: event.target.value,
-                  vol2: event.target.value
-                  unit: event.target.value
-                  food: event.target.value});
+    const target = event.target;
+    const value = target.type === 'text' ? target.text : target.value;
+    const name = target.name;
+
+    this.setState({ [name]: value });
   }
 
-  postSteps() {
+  postFood() {
     let recipeId = document.getElementById('recipe-id').textContent;
-    let nextStep = this.state.step
+    let nextV1 = this.state.volume1
+    let nextV2 = this.state.volume2
+    let nextUnit = this.state.unit
+    let nextFood = this.state.food
 
-      fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+      fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/ingredients`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ step: `${nextStep}` })
+        body: JSON.stringify({volume_1: nextV1,
+                              volume_2: nextV2,
+                              unit: nextUnit,
+                              food_item: nextFood
+                            })
       }).then(response => {
         if (response.ok) {
           return response;
@@ -49,20 +57,22 @@ class IngredientList extends Component {
         return response.json();
       })
       .then(text => {
-        this.setState({ steps: text,
-                        step: ''});
+        this.setState({ volume1: '0',
+                        volume2: '0',
+                        unit: '0',
+                        food_item: '' });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
   handleFormSubmit(event) {
     event.preventDefault();
-    this.postSteps();
+    this.postFood();
   }
 
-  getSteps() {
+  getFood() {
     let recipeId = document.getElementById('recipe-id').textContent;
-    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/ingredients`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -78,43 +88,53 @@ class IngredientList extends Component {
       return response.json();
     })
     .then(body => {
-      this.setState({steps: body});
+      this.setState({ingredients: body});
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount() {
-    this.getSteps();
+    this.getFood();
   }
 
   render() {
-    let stepItems = this.state.steps.map((s) => {
+    let volOptions = ["0", "1/16", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"]
+    let unitOptions = ["oz", "mL", "L", "dash", "pinch", "tsp", "Tbsp", "cup", "pt",
+                      "qt", "gal", "lb"]
+    let foodItems = this.state.ingredients.map((i) => {
         return (
-          <Instruction
-            key={s.id}
-            id={s.id}
-            recipe={s.recipe_id}
-            stepItems={s.step}
-            getAllSteps={this.getSteps}
+          <Ingredient
+            key={i.id}
+            id={i.id}
+            recipe={i.recipe_id}
+            v1={i.volume1}
+            v2={i.volume2}
+            nextUnit={i.unit}
+            nextFood={i.food_item}
+            getAllFood={this.getFood}
           />
         )
     })
     return (
-      <div className="recipe-instructions">
-      <a href="#" className="instruction-toggle">+ New Step</a>
-        <InstructionForm
+      <div className="recipe-ingredients">
+      <a href="#" className="ingredient-toggle">+ New Ingredient</a>
+        <IngredientForm
         handleFormSubmit={this.handleFormSubmit}
         handleChange={this.handleChange}
-        value={this.state.step}
-        id="instruction-form"
+        value1={this.state.volume1}
+        value2={this.state.volume2}
+        optionsV2={volOptions}
+        value3={this.state.unit}
+        optionsUnit={unitOptions}
+        value4={this.state.food_item}
       />
       <p>How To</p>
       <ul>
-        {stepItems}
+        {foodItems}
       </ul>
       </div>
     )
   }
 }
 
-export default InstructionList;
+export default IngredientList;

@@ -9,7 +9,7 @@ import IngredientList from './components/ingredients/IngredientList';
 $(function() {
   let reactApp = document.getElementById('recipe-index');
   let reactSteps = document.getElementById('recipe-instructions');
-  let reactIngredients = document.getElementById('recipe-ingredients';)
+  let reactIngredients = document.getElementById('recipe-ingredients');
 
   if (reactApp) {
     ReactDOM.render(<AppIndex />, reactApp);
