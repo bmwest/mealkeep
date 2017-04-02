@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Instruction from './Instruction'
 import InstructionForm from './InstructionForm'
 
-class InstructionList extends Component {
+class PostInstructions extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,12 +11,6 @@ class InstructionList extends Component {
     this.postSteps = this.postSteps.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.getSteps = this.getSteps.bind(this)
-    this.clearForm = this.clearForm.bind(this)
-  }
-
-  handleChange(event) {
-    this.setState({step: event.target.value});
   }
 
   postSteps() {
@@ -55,66 +48,22 @@ class InstructionList extends Component {
     this.postSteps();
   }
 
-  clearForm(event) {
-    let newStep = event.target.value
-    this.setState({ step: newStep})
-  }
-
-  getSteps() {
-    let recipeId = document.getElementById('recipe-id').textContent;
-    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => {
-      return response.json();
-    })
-    .then(body => {
-      this.setState({steps: body});
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
-  componentDidMount() {
-    this.getSteps();
+  handleChange(event) {
+    this.setState({step: event.target.value});
   }
 
   render() {
-    let stepItems = this.state.steps.map((s) => {
-        return (
-          <Instruction
-            key={s.id}
-            id={s.id}
-            recipe={s.recipe_id}
-            stepItems={s.step}
-            getAllSteps={this.getSteps}
-          />
-        )
-    })
     return (
-      <div className="recipe-instructions">
-      <a href="#" className="instruction-toggle">+ New Step</a>
+      <div>
+      <p> look at me!</p>
         <InstructionForm
         handleFormSubmit={this.handleFormSubmit}
         handleChange={this.handleChange}
         value={this.state.step}
-        id="instruction-form"
-      />
-      <p>How To</p>
-      <ul>
-        {stepItems}
-      </ul>
+        />
       </div>
     )
   }
 }
 
-export default InstructionList;
+export default PostInstructions;

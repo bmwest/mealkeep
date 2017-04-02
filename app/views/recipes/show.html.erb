@@ -34,23 +34,13 @@
 
 <br>
 
-<div class="form-container">
-  <div class="ingredient-form">
-    <a href="#" class="ingredient-toggle">+ New Ingredient</a>
-    <br><br>
-    <div id="ingredient-form" style="display: none">
-      <%= render 'ingredients/ingredient_form' %>
-    </div><br><br>
-  </div>
+<!-- <a href="#" class="instruction-toggle">+ New Step</a> -->
+<br><br>
 
-  <div class="instruction-form">
-    <a href="#" class="instruction-toggle">+ New Step</a>
-    <br><br>
-    <div id="instruction-form" style="display: none">
-      <%= render 'instructions/instruct_form' %>
-    </div><br>
-  </div>
-</div>
+
+  <div id="react-form">
+  </div><br>
+
 
 <div class="recipe-content">
   <div class="recipe-ingredients">
@@ -79,16 +69,11 @@
     <% end %>
   </div>
 
-    <div class="recipe-instructions">
-      <% if @instructions.any? %>
-        <p>How To</p>
-        <ul>
-          <% @instructions.each do |i| %>
-            <li><%= i.step %> <%= link_to "-", recipe_instruction_path(@recipe, i), method: :delete%></li>
-          <% end %>
-        </ul><br><br>
-      <% end %>
-    </div>
+    <div id='recipe-id' style="display:none"><%= @recipe.id %></div>
+    <% if @instructions.any? %>
+      <div id="recipe-instructions">
+      </div><br><br>
+    <% end %>
 </div>
 
 
