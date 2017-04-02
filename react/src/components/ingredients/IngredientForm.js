@@ -15,7 +15,7 @@ const IngredientForm = props => {
       </label>
       <label>
         volume two:
-        <select value={props.value2} name="volume2" onChange={props.handleV1Change}>
+        <select value={props.value2} name="volume2" onChange={props.handleV2Change}>
         <option value={props.optionsV2[0]}>{props.optionsV2[0]}</option>
         <option value={props.optionsV2[1]}>{props.optionsV2[1]}</option>
         <option value={props.optionsV2[2]}>{props.optionsV2[2]}</option>
