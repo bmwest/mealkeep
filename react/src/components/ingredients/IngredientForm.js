@@ -7,14 +7,15 @@ const IngredientForm = props => {
         volume one:
         <input
         type="text"
+        value={props.value1}
         name="volume1"
         placeholder="E.g. 1, 3, 35"
         value={props.value1}
-        onChange={props.handleChange} />
+        onChange={props.handleV1Change} />
       </label>
       <label>
         volume two:
-        <select value={props.value2} name="volume2" onChange={props.handleChange}>
+        <select value={props.value2} name="volume2" onChange={props.handleV1Change}>
         <option value={props.optionsV2[0]}>{props.optionsV2[0]}</option>
         <option value={props.optionsV2[1]}>{props.optionsV2[1]}</option>
         <option value={props.optionsV2[2]}>{props.optionsV2[2]}</option>
@@ -27,7 +28,7 @@ const IngredientForm = props => {
       </label>
       <label>
         unit:
-        <select value={props.value3} name="unit" onChange={props.handleChange}>
+        <select value={props.value3} name="unit" onChange={props.handleUnitChange}>
         <option value={props.optionsUnit[0]}>{props.optionsUnit[0]}</option>
         <option value={props.optionsUnit[1]}>{props.optionsUnit[1]}</option>
         <option value={props.optionsUnit[2]}>{props.optionsUnit[2]}</option>
@@ -49,7 +50,7 @@ const IngredientForm = props => {
         name="food_item"
         placeholder="E.g. samon, diced shallot, olive oil"
         value={props.value4}
-        onChange={props.handleChange} />
+        onChange={props.handleFoodChange} />
       </label>
       <input type="submit" value="+" />
     </form>

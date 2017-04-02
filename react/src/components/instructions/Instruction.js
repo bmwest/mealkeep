@@ -16,7 +16,7 @@ class Instruction extends Component {
       if (response.ok) {
         return response;
       } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
+        let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
       }

@@ -7,7 +7,7 @@ class Api::V1::IngredientsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @ingredient = ingredient.new(ingredient_params)
+    @ingredient = Ingredient.new(ingredient_params)
     @ingredient.recipe = @recipe
     @ingredient.save
 
