@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-import Instruction from './Instruction'
-import InstructionForm from './InstructionForm'
+import Ingredient from './Ingredient'
+import IngredientForm from './IngredientForm'
 
-class InstructionList extends Component {
+class IngredientList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      steps: [],
-      step: ''
+      ingredients: [],
+      vol1: '',
+      vol2: '',
+      unit: '',
+      food: ''
     }
-    this.postSteps = this.postSteps.bind(this)
+    this.postFood = this.postFood.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.getSteps = this.getSteps.bind(this)
+    this.getFood = this.getFood.bind(this)
   }
 
   handleChange(event) {
-    this.setState({step: event.target.value});
+    this.setState({vol1: event.target.value,
+                  vol2: event.target.value
+                  unit: event.target.value
+                  food: event.target.value});
   }
 
   postSteps() {
