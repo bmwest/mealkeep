@@ -8,7 +8,7 @@
 
 <div class="recipe-container">
   <div class="recipe-permissions">
-    <%= link_to "E D I T", edit_recipe_path(@recipe) %>   |
+    <%= link_to "E D I T", edit_recipe_path(@recipe) %>   / /
     <%= link_to "R E M O V E", user_recipe_path(@recipe), method: :delete%>
   </div>
   <div class="recipe-time">
@@ -19,19 +19,21 @@
   <p><%= @recipe.description %></p>
 </div>
 
-<div class="recipe-media">
+<!-- <div class="recipe-media">
   <p><%= @recipe.video %></p>
   <p><%= @recipe.photo %></p>
-</div>
+</div> -->
 
-<div class="input-directive">
+<!-- <div class="input-directive">
   <% if @instructions.empty? %>
     <p>ADD INSTRUCTIONS BELOW</p><br>
   <% end %>
   <% if @ingredients.empty? %>
     <p>ADD INGREDIENTS BELOW</p><br>
   <% end %>
-</div>
+</div> -->
+
+<br><br>
 
 
 <div id="recipe-ingredients">

@@ -11,7 +11,7 @@ class Api::V1::IngredientsController < ApplicationController
     @ingredient.recipe = @recipe
     @ingredient.save
 
-    render json: Ingredient.where(recipe: @recipe).order(updated_at: :desc)
+    render json: Ingredient.where(recipe: @recipe).order(updated_at: :asc)
   end
 
   def destroy

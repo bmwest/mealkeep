@@ -8,7 +8,6 @@
         <div class="recipe-item">
           <p>
             <h4><%= link_to r.name, recipe_path(r) %></h4>
-            <%= link_to "add photo", recipe_path(r) %></h4>
             <p class="description"><%= r.description %></p>
             <div class="time">
               <p><%= r.hours%> hr | <%= r.minutes %> min</p>
