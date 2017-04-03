@@ -95,8 +95,10 @@ class InstructionList extends Component {
     })
     return (
       <div className="recipe-instructions">
-        <div className="">
-          <a href="#" className="instruction-toggle">+ New Step</a>
+        <div>
+          <div  className="new-instruction">
+            <a href="#" className="instruction-toggle">+ New Step</a>
+          </div>
             <InstructionForm
             handleFormSubmit={this.handleFormSubmit}
             handleChange={this.handleChange}
@@ -104,9 +106,9 @@ class InstructionList extends Component {
             id="instruction-form"
           />
         </div>
-        <div className="instruction-list">
+        <div>
           <p>How To</p>
-          <ul className="">
+          <ul>
             {stepItems}
           </ul>
         </div>

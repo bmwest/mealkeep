@@ -3,17 +3,20 @@ import React from 'react'
 const IngredientForm = props => {
   return(
     <div>
-      <a href="#" onClick={props.toggleIF}>+ New Ingredient</a>
+      <div className="new-ingredient">
+        <a href="#" onClick={props.toggleIF}>+ New Ingredient</a>
+      </div>
       <div id="ingredient-toggle">
       <form onSubmit={props.handleFormSubmit}>
         <div className="small-6 medium-3 large-2 columns">
             <label>
               vol:
               <input
+              id="text-line"
               type="text"
               value={props.value1}
               name="volume1"
-              placeholder="E.g. 1, 3, 35"
+              placeholder="#"
               value={props.value1}
               onChange={props.handleV1Change} />
             </label>
@@ -21,7 +24,7 @@ const IngredientForm = props => {
           <div className="small-6 medium-3 large-2 columns">
             <label>
               vol:
-              <select value={props.value2} name="volume2" onChange={props.handleV2Change}>
+              <select value={props.value2} name="volume2" id="text-line" onChange={props.handleV2Change}>
               <option value={props.optionsV2[0]}>{props.optionsV2[0]}</option>
               <option value={props.optionsV2[1]}>{props.optionsV2[1]}</option>
               <option value={props.optionsV2[2]}>{props.optionsV2[2]}</option>
@@ -37,7 +40,7 @@ const IngredientForm = props => {
           <div className="small-6 medium-3 large-2 columns">
             <label>
               unit:
-              <select value={props.value3} name="unit" onChange={props.handleUnitChange}>
+              <select value={props.value3} name="unit" id="text-line" onChange={props.handleUnitChange}>
               <option value={props.optionsUnit[0]}>{props.optionsUnit[0]}</option>
               <option value={props.optionsUnit[1]}>{props.optionsUnit[1]}</option>
               <option value={props.optionsUnit[2]}>{props.optionsUnit[2]}</option>
@@ -58,9 +61,10 @@ const IngredientForm = props => {
             <label>
               name:
               <input
+              id="text-line"
               type="text"
               name="food_item"
-              placeholder="E.g. samon, diced shallot, olive oil"
+              placeholder="olive oil"
               value={props.value4}
               onChange={props.handleFoodChange} />
             </label>

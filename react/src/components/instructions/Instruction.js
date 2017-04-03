@@ -29,10 +29,10 @@ class Instruction extends Component {
 
   render() {
     return (
-      <div className="recipe-content">
+      <div className="how-to">
         <li className="">
         {this.props.stepItems}
-        <a href="#" onClick={this.handleRemoveInstruction}> - </a>
+        <a href="#" title="r e m o v e" onClick={this.handleRemoveInstruction}> - </a>
         </li>
       </div>
     )

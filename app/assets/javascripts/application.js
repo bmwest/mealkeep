@@ -14,13 +14,3 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
-
-$(".instruction-toggle").click(function($event) {
-  $event.preventDefault();
-  $("#instruction-form").toggle();
-});
-
-$(".ingredient-toggle").click(function($event) {
-  $event.preventDefault();
-  $("#ingredient-form").toggle();
-});

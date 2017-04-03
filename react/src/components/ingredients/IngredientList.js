@@ -9,8 +9,8 @@ class IngredientList extends Component {
       isHidden: true,
       ingredients: [],
       volume1: '',
-      volume2: '0',
-      unit: '0',
+      volume2: '',
+      unit: '',
       food_item: ''
     }
     this.postFood = this.postFood.bind(this)
@@ -72,8 +72,8 @@ class IngredientList extends Component {
       .then(text => {
         this.setState({ ingredients: text,
                         volume1: '',
-                        volume2: '0',
-                        unit: '0',
+                        volume2: ' ',
+                        unit: ' ',
                         food_item: '' });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -155,10 +155,12 @@ class IngredientList extends Component {
         optionsUnit={unitOptions}
         value4={this.state.food_item}
       />
-      <p>Ingredients</p>
-      <ul>
-        {foodItems}
-      </ul>
+        <p>Ingredients</p>
+        <div className="ingredient-list">
+          <ul>
+            {foodItems}
+          </ul>
+      </div>
       </div>
     )
   }
