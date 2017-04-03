@@ -37,8 +37,7 @@ class PostInstructions extends Component {
         return response.json();
       })
       .then(text => {
-        this.setState({ steps: text,
-                        step: ''});
+        this.setState({ step: '' });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }

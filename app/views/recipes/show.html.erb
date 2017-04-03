@@ -34,48 +34,16 @@
 
 <br>
 
-<!-- <a href="#" class="instruction-toggle">+ New Step</a> -->
 <br><br>
 
+  <% if @ingredients.any? %>
+    <div id="recipe-ingredients">
+    </div>
+  <% end %>
 
-  <div id="react-form">
-  </div><br>
-
-
-<div class="recipe-content">
-  <div class="recipe-ingredients">
-    <% if @ingredients.any? %>
-      <p>Ingredients</p>
-      <ul>
-        <% @ingredients.each do |ing| %>
-          <% if ing.volume1 == "0" && ing.volume2 != "0" %>
-            <li><i class="fa fa-angle-right"></i> <%= ing.volume2 %> <%= ing.unit %> -
-              <%= ing.food_item %>
-              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
-              method: :delete%></li>
-          <% elsif ing.volume1 != "0" && ing.volume2 == "0" %>
-            <li><i class="fa fa-angle-right"></i> <%= ing.volume1 %> <%= ing.unit %> -
-              <%= ing.food_item %>
-              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
-            method: :delete%></li>
-          <% elsif ing.volume1 != "0" && ing.volume2 != "0" %>
-            <li><i class="fa fa-angle-right"></i> <%= ing.volume1 %> <%= ing.volume2 %> <%= ing.unit %> -
-              <%= ing.food_item %>
-              <%= link_to "-", recipe_ingredient_path(@recipe, ing),
-            method: :delete%></li>
-          <% end %>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-
-    <div id='recipe-id' style="display:none"><%= @recipe.id %></div>
-    <% if @instructions.any? %>
-      <div id="recipe-instructions">
-      </div><br><br>
-    <% end %>
-</div>
-
-
-
+  <div id='recipe-id' style="display:none"><%= @recipe.id %></div>
+  <% if @instructions.any? %>
+    <div id="recipe-instructions">
+    </div><br><br>
+  <% end %>
   </div>

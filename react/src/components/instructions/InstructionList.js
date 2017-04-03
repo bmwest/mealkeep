@@ -13,7 +13,6 @@ class InstructionList extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.getSteps = this.getSteps.bind(this)
-    this.clearForm = this.clearForm.bind(this)
   }
 
   handleChange(event) {
@@ -35,7 +34,7 @@ class InstructionList extends Component {
         if (response.ok) {
           return response;
         } else {
-          let errorMessage = `${response.status} ($response.statusText)`,
+          let errorMessage = `${response.status} (${response.statusText})`,
           error = new Error(errorMessage);
           throw(error);
         }
@@ -55,11 +54,6 @@ class InstructionList extends Component {
     this.postSteps();
   }
 
-  clearForm(event) {
-    let newStep = event.target.value
-    this.setState({ step: newStep})
-  }
-
   getSteps() {
     let recipeId = document.getElementById('recipe-id').textContent;
     fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
@@ -69,7 +63,7 @@ class InstructionList extends Component {
       if (response.ok) {
         return response;
       } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
+        let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
       }
@@ -101,17 +95,21 @@ class InstructionList extends Component {
     })
     return (
       <div className="recipe-instructions">
-      <a href="#" className="instruction-toggle">+ New Step</a>
-        <InstructionForm
-        handleFormSubmit={this.handleFormSubmit}
-        handleChange={this.handleChange}
-        value={this.state.step}
-        id="instruction-form"
-      />
-      <p>How To</p>
-      <ul>
-        {stepItems}
-      </ul>
+        <div className="">
+          <a href="#" className="instruction-toggle">+ New Step</a>
+            <InstructionForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleChange={this.handleChange}
+            value={this.state.step}
+            id="instruction-form"
+          />
+        </div>
+        <div className="instruction-list">
+          <p>How To</p>
+          <ul className="">
+            {stepItems}
+          </ul>
+        </div>
       </div>
     )
   }

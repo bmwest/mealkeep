@@ -16,7 +16,7 @@ class Instruction extends Component {
       if (response.ok) {
         return response;
       } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
+        let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
       }
@@ -29,10 +29,10 @@ class Instruction extends Component {
 
   render() {
     return (
-      <div className="">
+      <div className="recipe-content">
         <li className="">
         {this.props.stepItems}
-        <button type="button" onClick={this.handleRemoveInstruction}> - </button>
+        <a href="#" onClick={this.handleRemoveInstruction}> - </a>
         </li>
       </div>
     )

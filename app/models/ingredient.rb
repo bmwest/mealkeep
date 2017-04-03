@@ -1,7 +1,4 @@
 class Ingredient < ApplicationRecord
-  validates :volume1, presence: true
-  validates :volume2, presence: true
-  validates :unit, presence: true
   validates :food_item, presence: true
   belongs_to :recipe
 
