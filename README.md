@@ -7,7 +7,7 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-https://dataplate.herokuapp.com
+https://mealkeep.herokuapp.com/
 
 * Ruby version: 2.3.3
 

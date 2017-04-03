@@ -23,7 +23,7 @@ class InstructionList extends Component {
     let recipeId = document.getElementById('recipe-id').textContent;
     let nextStep = this.state.step
 
-      fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+      fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/instructions`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -56,7 +56,7 @@ class InstructionList extends Component {
 
   getSteps() {
     let recipeId = document.getElementById('recipe-id').textContent;
-    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions`, {
+    fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/instructions`, {
       credentials: 'same-origin'
     })
     .then(response => {
