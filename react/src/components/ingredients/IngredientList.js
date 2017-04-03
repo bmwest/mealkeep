@@ -46,7 +46,7 @@ class IngredientList extends Component {
     let nextUnit = this.state.unit
     let nextFood = this.state.food_item
 
-      fetch(`hhttps://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/ingredients`, {
+      fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/ingredients`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
