@@ -76,13 +76,13 @@ class AppIndex extends Component {
         icon = `<`
       }
       return (
-        <li
+        <a
         key={number}
         id={number}
         onClick={this.handleClick}
         className="page-number">
         {icon}
-        </li>
+        </a>
       );
     });
 

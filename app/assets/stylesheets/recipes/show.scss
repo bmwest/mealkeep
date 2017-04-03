@@ -78,26 +78,27 @@
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 200;
 }
-.form-container {
-  // margin-left: 5%;
+
+
+.instruction-toggle {
+    margin-left: 1%;
 }
+
 .ingredient-form {
   // margin-top: 10%;
 }
 .submit {
-  padding-top: 5px;
+  margin-top: 30px;
 }
 
 .recipe-content {
   background-color: #DBECEF;
   font-style: normal;
   display: flex;
-  align-items: center;
-  width: 900px;
   justify-content: space-around;
   padding: 0;
-  margin: 0 auto;
   list-style: none;
+  text-align: left;
   margin-bottom: 0%;
 }
 
@@ -106,12 +107,16 @@
   margin: 12px;
   margin-top: 0px;
   float: left;
-  width: 60%;
+  width: 45%;
   height: auto;
   text-align: justify;
   color: black;
   align-items: center;
   list-style: none;
+}
+
+.recipe-ingredients submit {
+
 }
 
 .recipe-ingredients ul {
@@ -124,7 +129,7 @@
   padding-left: 10%;
   // margin-bottom: 20%;
   margin-left: 0px;
-  // margin-right: 40px;
+  margin-right: 20%;
   text-align: justify;
 }
 
@@ -134,6 +139,7 @@
   line-height: 32px;
   font-weight: 100;
   margin-bottom: 0px;
+  margin-top: 60px;
 }
 
 .recipe-ingredients li {
@@ -141,24 +147,35 @@
   line-height: 20px;
 }
 
-.recipe-ingredients a {
-  font-size: 30px;
-}
-
 .recipe-instructions {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   // margin-left: 45%;
-  height: auto;
-  margin: 12px;
-  padding-top: 42px;
+  // height: auto;
+  // margin: 12px;
+  // padding-top: 42px;
   // width: 25%;
+  display: inline-block;
+  margin: 12px;
+  margin-top: 0px;
+  float: right;
+  width: 45%;
+  height: auto;
+  text-align: justify;
+  color: black;
+  align-items: center;
+  list-style: none;
+}
+
+.instruction-list li {
+  text-align: left;
 }
 
 .recipe-instructions p {
-  padding-left: 70%;
+  margin-left: 3%;
   font-size: 45px;
   line-height: 32px;
   font-weight: 100;
+  margin-top: 60px;
   margin-bottom: 0px;
 }
 
@@ -167,4 +184,6 @@
   background-color: white;
   opacity: 0.80;
   margin-bottom: 10px;
+  text-align: left;
+  margin-top: 10px;
 }

@@ -32,8 +32,8 @@ class Ingredient extends Component {
       <div className="">
         <li className="">
         {this.props.v1} {this.props.v2} {this.props.nextUnit} - {this.props.nextFood}
+        <a  onClick={this.handleRemoveIngredient}> - </a>
         </li>
-        <button type="button" onClick={this.handleRemoveIngredient}> - </button>
       </div>
     )
   }

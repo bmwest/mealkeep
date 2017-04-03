@@ -6,6 +6,7 @@ class IngredientList extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      isHidden: true,
       ingredients: [],
       volume1: '',
       volume2: '0',
@@ -19,6 +20,7 @@ class IngredientList extends Component {
     this.handleUnitChange = this.handleUnitChange.bind(this)
     this.handleFoodChange = this.handleFoodChange.bind(this)
     this.getFood = this.getFood.bind(this)
+    this.toggleIngredientForm = this.toggleIngredientForm.bind(this)
   }
 
   handleV1Change(event) {
@@ -109,10 +111,20 @@ class IngredientList extends Component {
     this.getFood();
   }
 
+  toggleIngredientForm() {
+    event.preventDefault();
+    let form = document.getElementById('ingrentient-toggle');
+    if (form.style.display === 'none') {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none'
+    }
+  }
+
   render() {
-    let volOptions = ["0", "1/16", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"]
-    let unitOptions = ["oz", "mL", "L", "dash", "pinch", "tsp", "Tbsp", "cup",
-                      "pt", "qt", "gal", "lb"]
+    let volOptions = ["", "0", "1/16", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"]
+    let unitOptions = ["", "oz", "mL", "L", "dash", "pinch", "tsp", "Tbsp",
+                      "cup", "pt", "qt", "gal", "lb"]
     let foodItems = this.state.ingredients.map((i) => {
         return (
           <Ingredient
@@ -129,13 +141,13 @@ class IngredientList extends Component {
     })
     return (
       <div className="recipe-ingredients">
-      <a href="#" className="ingredient-toggle">+ New Ingredient</a>
         <IngredientForm
         handleFormSubmit={this.handleFormSubmit}
         handleV1Change={this.handleV1Change}
         handleV2Change={this.handleV2Change}
         handleUnitChange={this.handleUnitChange}
         handleFoodChange={this.handleFoodChange}
+        toggleIF={this.toggleIngredientForm}
         value1={this.state.volume1}
         value2={this.state.volume2}
         optionsV2={volOptions}

@@ -95,17 +95,21 @@ class InstructionList extends Component {
     })
     return (
       <div className="recipe-instructions">
-      <a href="#" className="instruction-toggle">+ New Step</a>
-        <InstructionForm
-        handleFormSubmit={this.handleFormSubmit}
-        handleChange={this.handleChange}
-        value={this.state.step}
-        id="instruction-form"
-      />
-      <p>How To</p>
-      <ul>
-        {stepItems}
-      </ul>
+        <div className="">
+          <a href="#" className="instruction-toggle">+ New Step</a>
+            <InstructionForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleChange={this.handleChange}
+            value={this.state.step}
+            id="instruction-form"
+          />
+        </div>
+        <div className="instruction-list">
+          <p>How To</p>
+          <ul className="">
+            {stepItems}
+          </ul>
+        </div>
       </div>
     )
   }
