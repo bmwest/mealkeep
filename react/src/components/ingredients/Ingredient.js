@@ -29,10 +29,10 @@ class Ingredient extends Component {
 
   render() {
     return(
-      <div className="">
-        <li className="">
-        {this.props.v1} {this.props.v2} {this.props.nextUnit} - {this.props.nextFood}
-        <a  onClick={this.handleRemoveIngredient}> - </a>
+      <div>
+        <li>
+        {this.props.v1} {this.props.v2} {this.props.nextUnit} {this.props.nextFood}
+        <a title="r e m o v e" onClick={this.handleRemoveIngredient}> - </a>
         </li>
       </div>
     )

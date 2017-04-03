@@ -2,7 +2,7 @@ class Api::V1::IngredientsController < ApplicationController
 
   def index
     @recipe = Recipe.find(params[:recipe_id])
-    render json: Ingredient.where(recipe: @recipe).order(updated_at: :desc)
+    render json: Ingredient.where(recipe: @recipe).order(updated_at: :asc)
   end
 
   def create
