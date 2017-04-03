@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
 
     if user_signed_in?
       @user = current_user
-      @recipes = @user.recipes.sample(3)
+      @recipes = @user.recipes.sample(5)
     end
   end
 

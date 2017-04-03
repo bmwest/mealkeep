@@ -11,7 +11,7 @@ class Api::V1::InstructionsController < ApplicationController
     @instruction.recipe = @recipe
     @instruction.save
 
-    render json: Instruction.where(recipe: @recipe).order(updated_at: :desc)
+    render json: Instruction.where(recipe: @recipe).order(updated_at: :asc)
   end
 
   def destroy

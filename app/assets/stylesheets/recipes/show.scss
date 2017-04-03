@@ -26,6 +26,7 @@
   font-family: Raleway;
   flex-basis: 50%;
   margin-top: 10px;
+  max-height: 200px;
 }
 
 .recipe-container h6 {
@@ -40,7 +41,7 @@
 
 .recipe-container .recipe-description {
   align-self: center;
-  text-align: left;
+  text-align: center;
   font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
   width: 50%;
   height: 20%;
@@ -138,7 +139,7 @@
   // padding-left: 10%;
   // margin-bottom: 20%;
   margin-left: 0px;
-  margin-right: 50%;
+  margin-right: 30%;
   text-align: justify;
 }
 
@@ -155,7 +156,7 @@
   opacity: 0.76;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
-  padding: 0px;
+  padding-left: 10px;
   line-height: 20px;
 }
 

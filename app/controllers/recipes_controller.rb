@@ -64,7 +64,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
 
     if @recipe.destroy
-      redirect_to user_recipes_path(current_user), notice: "Your recipe has a new entry!"
+      redirect_to user_recipes_path(current_user), notice: "Recipe removed!"
     else
       render :new
     end

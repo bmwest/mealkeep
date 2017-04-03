@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Ingredient.destroy_all
 Instruction.destroy_all
 Recipe.destroy_all
 User.destroy_all
@@ -49,7 +49,24 @@ end
             "Sun-dried Tomato Hummus",
             "Sweet and Spicy Chinese Five Spice Roasted Almonds",
             "Tzatziki Sauce (cucumber yogurt dip)",
-            "Whole Wheat Pita Chips"]
+            "Whole Wheat Pita Chips",
+            "Apricot Cream Scones",
+            "Banana Cream Cheese Roll",
+            "Blueberry Breakfast Bars",
+            "Cherry Banana Muffins with White Chocolate Chips",
+            "Chilled Ginger Cantaloupe Soup",
+            "Fluffy Buttermilk Biscuits",
+            "Lemon Pancakes",
+            "Nectarine Muffins",
+            "Oatmeal Raisin Cookie Muffins",
+            "Orange Yogurt Bread",
+            "Peachy Banana Muffins",,
+            "Sour Cream, Cheddar, and Chive Biscuits",
+            "Sour Cream Cinnamon Streusel Muffins with Pecan Filling",
+            "Southwest Style Egg Muffins",
+            "Spiked Egg Nog French Toast",
+            "Sweet Potato Biscuits with Bacon and Thyme",
+            "Whole Grain Sour Cream Apple Muffins"]
 
 24.times do
   Recipe.create(name: @recipes.sample,
@@ -64,12 +81,12 @@ end
                     recipe: Recipe.all.sample)
 end
 
-@volumes = ["0", "1/16", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"]
+@volumes = ["", "1/16", "1/8", "1/4", "1/3", "1/2", "2/3", "3/4"]
 @units =  ["oz", "mL", "L", "dash", "pinch", "tsp", "Tbsp", "cup", "pt",
         "qt", "gal", "lb"]
 
 120.times do
-  Ingredient.create(volume1: "#{Faker::Number.between(0, 10)}",
+  Ingredient.create(volume1: "#{Faker::Number.between(1, 10)}",
                     volume2: @volumes.sample,
                     unit: @units.sample,
                     food_item: Faker::Food.ingredient,
