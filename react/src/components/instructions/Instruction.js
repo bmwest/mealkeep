@@ -10,7 +10,7 @@ class Instruction extends Component {
     event.preventDefault();
     let recipeId = document.getElementById('recipe-id').textContent;
     let stepId = this.props.id;
-    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/instructions/${stepId}`, {
+    fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/instructions/${stepId}`, {
       method: 'DELETE',
     }).then(response => {
       if (response.ok) {
