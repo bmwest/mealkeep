@@ -31,6 +31,9 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
   gem "dotenv-rails"
+  gem 'coveralls', require: false
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -38,12 +41,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :test do
-  gem 'coveralls', require: false
-  gem 'poltergeist'
-  gem 'database_cleaner'
 end
 
 group :production do

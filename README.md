@@ -1,9 +1,6 @@
 # README
 
-![Build Status](https://codeship.com/projects/12f0e780-ed82-0134-7325-520326763575/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/bmwest/plate.png)
-![Coverage Status](https://coveralls.io/repos/github/bmwest/mealkeep/badge.png)
-
 
 https://mealkeep.herokuapp.com/
 
