@@ -2,22 +2,22 @@
   background-color: white;
   position: fixed;
   width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
   top: 0;
 }
 
 .home-notice {
-  background-color: #C6DCF0;
-  padding-left: 10px;
-  padding-bottom: 10px;
+  background-color: #c6dcf0;
   line-height: 40px;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 .home-notice p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 body.welcome {
@@ -42,5 +42,4 @@ body.welcome {
 .recipe-item {
   padding: 10px;
   margin: 10px;
- // background-color: #ECE9BE;
 }
