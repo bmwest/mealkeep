@@ -46,7 +46,7 @@ class IngredientList extends Component {
     let nextUnit = this.state.unit
     let nextFood = this.state.food_item
 
-      fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/ingredients`, {
+      fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/ingredients`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -86,7 +86,7 @@ class IngredientList extends Component {
 
   getFood() {
     let recipeId = document.getElementById('recipe-id').textContent;
-    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/ingredients`, {
+    fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/ingredients`, {
       credentials: 'same-origin'
     })
     .then(response => {
