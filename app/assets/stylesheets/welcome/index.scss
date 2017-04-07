@@ -7,6 +7,19 @@
   top: 0;
 }
 
+.home-notice {
+  background-color: #C6DCF0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  line-height: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.home-notice p {
+    margin-bottom: 0px;
+}
+
 body.welcome {
   background: url(https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -16,7 +29,7 @@ body.welcome {
  }
 
  .recipe-demo {
-   margin-top: 200px;
+   margin-top: 75px;
  }
 
  .user-list {
