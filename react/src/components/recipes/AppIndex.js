@@ -20,7 +20,7 @@ class AppIndex extends Component {
   }
 
   getData() {
-    fetch('https://mealkeep.herokuapp.com/api/v1/recipes', {
+    fetch('http://localhost:3000/api/v1/recipes', {
       credentials: 'same-origin'
     })
     .then(response => {

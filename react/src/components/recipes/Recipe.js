@@ -3,7 +3,7 @@ import React from 'react'
 const Recipe = (props) => {
   return (
     <div className="recipe-item">
-      <h4><a href={`https://mealkeep.herokuapp.com/recipes/` + props.id}>{props.name}</a></h4>
+      <h4><a href={`http://localhost:3000/recipes/` + props.id}>{props.name}</a></h4>
         <p>{props.description}</p>
         <p>{props.ingredients}</p>
         <div className="time">

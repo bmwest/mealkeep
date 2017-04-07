@@ -10,7 +10,7 @@ class Ingredient extends Component {
     event.preventDefault();
     let recipeId = document.getElementById('recipe-id').textContent;
     let ingredientId = this.props.id;
-    fetch(`https://mealkeep.herokuapp.com/api/v1/recipes/${recipeId}/ingredients/${ingredientId}`, {
+    fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/ingredients/${ingredientId}`, {
       method: 'DELETE',
     }).then(response => {
       if (response.ok) {
