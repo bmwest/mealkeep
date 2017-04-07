@@ -23,8 +23,6 @@ feature "user creates a profile" do
     fill_in "About Me", with: 'I like cake and pie'
     click_button "Save"
 
-    expect(page).to have_content("View Your Profile")
-    expect(page).to have_content("Edit Your Profile")
     expect(page).to_not have_content("Create a Profile")
     expect(page).to have_content("You're all set! Now, let's get cooking")
     expect(page).to have_content("A little bit about #{user.first_name},")
