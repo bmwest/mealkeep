@@ -21,6 +21,9 @@
      <% end %>
      <%= link_to 'Your Recipes', user_recipes_path(current_user)%> |
      <%= link_to 'Add Recipe', new_user_recipe_path(current_user)%> |
+     <% if current_user && current_user.admin? %>
+      <%= link_to 'Add Site Demo', new_demo_path %> |
+     <% end %>
       <div class="dropdown">
           <a class="dropbtn"><i class="fa fa-cogs"></i></a>
           <div class="dropdown-content">

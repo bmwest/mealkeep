@@ -13,7 +13,8 @@ User.destroy_all
 User.create(first_name: "Briana",
             last_name: "West",
             email: "bmwest@bu.edu",
-            password: "123456")
+            password: "123456",
+            role: "admin")
 
 
 @description = []
@@ -60,7 +61,7 @@ end
             "Nectarine Muffins",
             "Oatmeal Raisin Cookie Muffins",
             "Orange Yogurt Bread",
-            "Peachy Banana Muffins",,
+            "Peachy Banana Muffins",
             "Sour Cream, Cheddar, and Chive Biscuits",
             "Sour Cream Cinnamon Streusel Muffins with Pecan Filling",
             "Southwest Style Egg Muffins",
