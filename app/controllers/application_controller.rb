@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     unless user_signed_in? && current_user.admin?
       redirect_to root_path, notice: "We're sorry, this resource is reserved" +
-      " exclusively for site admins."
+        " exclusively for site admins."
     end
   end
 end
