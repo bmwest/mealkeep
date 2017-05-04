@@ -8,6 +8,10 @@ class WelcomeController < ApplicationController
       @user = current_user
       @recipes = @user.recipes.sample(5)
     end
+
+    @directives = ["Add recipes", "Remove and add ingredients as necessary",
+                   "drag and re-order instructions",
+                   "Update serving sizes (ingredients will scale accordingly)"]
   end
 
   def show

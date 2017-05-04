@@ -1,5 +1,6 @@
 .greeting-header {
-  background-color: white;
+  color: #4682B4;
+  opacity: 0.75;
   position: fixed;
   width: 100%;
   margin-left: 0;
@@ -20,12 +21,18 @@
   margin-bottom: 0;
 }
 
-body.welcome {
-  background: url(https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.welcome-container {
+  background: url(https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif);
+  // no-repeat center center fixed;
+  height: 450px;
+  margin-top: 0px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
 }
 
 .recipe-demo {
