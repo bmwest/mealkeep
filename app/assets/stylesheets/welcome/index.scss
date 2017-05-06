@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Italiana");
+
 .greeting-header {
-  color: #4682B4;
+  font-family: 'Italiana', serif;
+  font-weight: 300;
+  text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+  color: #344364;
   margin-left: 0;
   margin-right: 0;
-  opacity: 0.75;
-  position: fixed;
+  padding: 150px;
   top: 0;
+  height: 600px;
   width: 100%;
 }
 
@@ -13,7 +18,7 @@
   line-height: 40px;
   margin-bottom: 0;
   margin-top: 0;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   padding-left: 10px;
 }
 
@@ -28,11 +33,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
-  margin-top: 0;
+  top: 0;
 }
 
 .recipe-demo {
-  margin-top: 75px;
+  // margin-top: 75px;
 }
 
 .user-list {
@@ -45,4 +50,29 @@
 .recipe-item {
   padding: 10px;
   margin: 10px;
+}
+
+.directive-container {
+  background-color: #C5B4AD;
+  padding: 50px 10px 50px 50px;
+}
+
+.site-directives {
+  padding: 50px 10px 50px 50px;
+  margin: 0 40% 0 0;
+  box-shadow: 10px 10px #293038;
+  background-color: #D5D0BA;
+  font-family: Raleway;
+  opacity: 0.75;
+}
+
+.site-directives {
+  h3 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 300;
+  }
+  ul {
+    list-style: none;
+    padding: 2% 0 0 10%;
+  }
 }

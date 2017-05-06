@@ -3,7 +3,16 @@
     <p><%= notice %></p>
     <p><%= alert %></p>
   </div>
-  <h1 class="greeting-header"><%= @greetings.sample %></h1>
+</div>
+<div class="directive-container">
+  <div class="site-directives">
+    <h3>With an account you can: </h3>
+    <ul>
+      <% @directives.each do |d| %>
+      <li> <i class="fa fa-spoon" aria-hidden="true"></i><%= d %> </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 <div class="recipe-demo">
   <div class="user-list">
@@ -24,14 +33,6 @@
     <% end %>
   </div>
 </div>
-<div class="site-directives">
-  <h3>With an account you can: </h3>
-  <ul>
-    <% @directives.each do |d| %>
-      <li> <%= d %> </li>
-    <% end %>
-  </ul>
-</div>
 <div class="demo-auto-play">
   <h1> DEMO WILL AUTO PLAY HERE</h1>
   <p> content </p>
@@ -42,3 +43,4 @@
 <div class="home-footer">
   <h1> some footer stuff and maybe a button to send user to the top of screen</h1>
 </div>
+<h1 class="greeting-header"><%= @greetings.sample %></h1>
