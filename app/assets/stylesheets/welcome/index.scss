@@ -1,11 +1,11 @@
 .greeting-header {
   color: #4682B4;
-  opacity: 0.75;
-  position: fixed;
-  width: 100%;
   margin-left: 0;
   margin-right: 0;
+  opacity: 0.75;
+  position: fixed;
   top: 0;
+  width: 100%;
 }
 
 .home-notice {
@@ -22,17 +22,13 @@
 }
 
 .welcome-container {
-  background: url(https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif);
-  // no-repeat center center fixed;
-  height: 450px;
-  margin-top: 0px;
+  background: url('https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
+  height: 500px;
+  margin-top: 0;
 }
 
 .recipe-demo {
