@@ -10,5 +10,9 @@ class User < ApplicationRecord
     Profile.where(user: User.ids)
   end
 
+  def admin?
+    role == "admin"
+  end
+
   has_many :recipes
 end

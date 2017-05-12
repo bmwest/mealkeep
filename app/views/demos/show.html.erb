@@ -1,0 +1,5 @@
+<% if !@demos.empty? %>
+  <p><% @demo.video %></p>
+  <%= link_to 'Edit Site Demo', edit_demo_path(@demo) %> |
+  <p><% @demo.description %></p>
+<% end %>

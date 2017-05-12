@@ -1,0 +1,38 @@
+<%= form_for @demo do |f| %>
+
+  <div class="error-messages">
+    <% if @demo.errors.any? %>
+      <p><%= pluralize(@demo.errors.count, "error(s)") %> prohibited this demo from being saved:</p>
+      <ul>
+        <% @demo.errors.full_messages.each do |m| %>
+          <li><%= m %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="large-11 small-11 large-11 columns">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div><br><br>
+
+    <div class="row">
+      <div class="video-input">
+        <%= f.label :video %><br>
+        <%= f.text_field :video %>
+      </div><br><br>
+    </div>
+
+    <div class="row">
+      <div class="large-11 small-11 large-11 columns">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </div><br><br>
+    </div>
+  </div>
+
+    <div class="save">
+      <%= f.submit '+'%><br><br>
+    </div>
+<% end %>
