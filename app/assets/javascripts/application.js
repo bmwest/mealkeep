@@ -14,3 +14,25 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+
+$(function(){
+    $(".site-directives").on({
+        mouseover:function(){
+            $(this).css({
+                left:(Math.random()*10)+"px",
+                top:(Math.random()*10)+"px",
+            });
+        }
+    });
+});
+
+var target = $('.top-bar');
+var targetHeight = target.outerHeight();
+
+$(document).scroll(function(e){
+    var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
+    if(scrollPercent >= 5){
+        target.css('background-color', 'rgba(150, 136, 136, 0.5)');
+    }
+    else  target.css('background-color', 'rgb(150, 136, 136, 1)');
+});

@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Italiana");
 
-.greeting-header {
-  font-family: 'Italiana', serif;
-  font-weight: 300;
-  text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
-  color: #344364;
+.greeting {
+  text-shadow: -1px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -1px #000000;
+  // #344364;
+  padding: 250px;
   margin-left: 0;
   margin-right: 0;
-  padding: 150px;
   top: 0;
-  height: 600px;
+  height: 620px;
   width: 100%;
+}
+
+.greeting-header {
+  // background-color: #708090;
+  // #D3D3D3;
+  font-family: 'Italiana', serif;
+  font-weight: 400;
+  color: #E9E5D9;
+  // #E9E5D9;
+  border-style: solid;
+  border-color: #293038;
 }
 
 .home-notice {
@@ -28,12 +37,17 @@
 
 .welcome-container {
   background: url('https://fabweb.org/wp-content/uploads/2015/08/kitchenghosts12.gif');
+  background-blend-mode: darken;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 620px;
   top: 0;
+}
+
+.welcome-container.background {
+  opacity: .5;
 }
 
 .recipe-demo {
@@ -53,26 +67,53 @@
 }
 
 .directive-container {
+  h3 {
+    // text-shadow: -1px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -1px #000000;
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    color: #293038;
+  }
   background-color: #C5B4AD;
   padding: 50px 10px 50px 50px;
 }
 
-.site-directives {
-  padding: 50px 10px 50px 50px;
-  margin: 0 40% 0 0;
-  box-shadow: 10px 10px #293038;
-  background-color: #D5D0BA;
-  font-family: Raleway;
-  opacity: 0.75;
+.list-container {
+  margin: 0 10% 0 10%;
+  align-items: center;
 }
 
 .site-directives {
-  h3 {
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    font-weight: 300;
-  }
-  ul {
+  padding: 50px 10px 50px 10px;
+  margin: 5% 5% 0 0;
+  box-shadow: 10px 10px #293038;
+  background-color: #E9E5D9;
+  // #D5D0BA;
+  font-family: Raleway;
+  opacity: 0.75;
+  width: inherit;
+  display: inline-block;
+  position: relative;
+}
+
+// .site-directives:hover {
+//   margin: 5%;
+// }
+.site-directives {
+  li {
     list-style: none;
-    padding: 2% 0 0 10%;
   }
+}
+
+.home-footer {
+  h4 {
+    font-family: Raleway;
+    // font-weight: 100;
+  }
+  text-align: center;
+  color: #E9E5D9;
+  padding: 30px;
+  bottom: 0;
+  background-color: #293038;
+  height: 80px;
+  width: 100%;
 }

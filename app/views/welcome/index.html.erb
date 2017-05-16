@@ -1,18 +1,25 @@
 <div class="welcome-container">
-  <div class="home-notice">
+  <!-- <div class="home-notice">
     <p><%= notice %></p>
     <p><%= alert %></p>
+  </div> -->
+  <div class="greeting">
+    <h1 class="greeting-header"><%= @greetings.sample %></h1>
   </div>
 </div>
 <div class="directive-container">
-  <div class="site-directives">
+  <% if !user_signed_in? %>
     <h3>With an account you can: </h3>
-    <ul>
-      <% @directives.each do |d| %>
-      <li> <i class="fa fa-spoon" aria-hidden="true"></i><%= d %> </li>
-      <% end %>
-    </ul>
-  </div>
+      <div class="list-container">
+        <ul>
+          <% @directives.each do |d| %>
+          <div class="site-directives">
+          <li><%= d %> </li>
+        </div>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
 </div>
 <div class="recipe-demo">
   <div class="user-list">
@@ -34,13 +41,10 @@
   </div>
 </div>
 <div class="demo-auto-play">
-  <h1> DEMO WILL AUTO PLAY HERE</h1>
-  <p> content </p>
-  <p> content </p>
-  <p> content </p>
-  <p> content </p>
+
 </div>
 <div class="home-footer">
-  <h1> some footer stuff and maybe a button to send user to the top of screen</h1>
+  <% if !user_signed_in? %>
+    <h4>Sign-up is easy and use of the application is completely free</h4>
+  <% end %>
 </div>
-<h1 class="greeting-header"><%= @greetings.sample %></h1>
