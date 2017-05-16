@@ -3,6 +3,7 @@
 .greeting {
   text-shadow: -1px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -1px #000000;
   // #344364;
+  text-align: center;
   padding: 250px;
   margin-left: 0;
   margin-right: 0;
@@ -20,6 +21,8 @@
   // #E9E5D9;
   border-style: solid;
   border-color: #293038;
+  text-align: center;
+  display: inline-block;
 }
 
 .home-notice {
