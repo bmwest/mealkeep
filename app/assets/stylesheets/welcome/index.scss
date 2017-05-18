@@ -28,7 +28,7 @@
   color: #E9E5D9;
   // #E9E5D9;
   border-style: solid;
-  border-color: #293038;
+  border-color: #1D2D39;
   text-align: center;
   display: inline-block;
 }
@@ -82,9 +82,9 @@
     // text-shadow: -1px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -1px #000000;
     font-family: 'Italiana', serif;
     font-weight: 400;
-    color: #293038;
+    color: #1D2D39;
   }
-  background-color: #C5B4AD;
+  background-color: #F5F4ED;
   padding: 50px 10px 50px 50px;
 }
 
@@ -96,7 +96,7 @@
 .site-directives {
   padding: 50px 10px 50px 10px;
   margin: 5% 5% 0 0;
-  box-shadow: 10px 10px #293038;
+  box-shadow: 10px 10px #A42102;
   background-color: #E9E5D9;
   // #D5D0BA;
   font-family: Raleway;
@@ -112,6 +112,7 @@
 .site-directives {
   li {
     list-style: none;
+    color: #1D2D39;
   }
 }
 
@@ -124,7 +125,7 @@
   color: #E9E5D9;
   padding: 30px;
   bottom: 0;
-  background-color: #293038;
+  background-color: #547FA2;
   height: 80px;
   width: 100%;
 }
